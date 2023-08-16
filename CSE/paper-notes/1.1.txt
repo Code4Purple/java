@@ -1,0 +1,56 @@
+1.1 - What is computer Science?
+
+    Questions for 1.1
+1. What is computer science?
+2. What is a computer?
+3. what is a algorithm?
+4. What is programming?
+5. what is a program?
+6. what is a programming language?
+7. what is java?
+8. what is a java program?
+9. How is CS and programming differnet from each other endeavors?
+
+
+
+Algorithm - A list of instructions that, when followed, solves a problem.
+Computer - can take information from the outside of it and can process instructions of data to do a task.
+Program - is a set of instructions written in a language that a computer can execute to solve a problem.
+
+    Types of Programming Languages
+Machine Language
+Compiled Language
+Interpreted Language
+
+The programmer-created sequence of instructions is called a program, application, or just app.
+
+Using the above approach, an executable can only run on a particular processor type (like an x86 processor); 
+to run a program on multiple processor types, the programmer must have the compiler generate multiple executables. 
+Some newer high-level languages like Java use an approach that allows the same executable to run on different processor types. 
+The approach involves having the compiler generate an executable using machine instructions of a "virtual" processor, such an executable is sometimes called bytecode. 
+Then, the real processor runs a program, sometimes called a virtual machine, that executes the instructions in the bytecode. 
+Such an approach may yield slower program execution, but has the advantage of portable executables.
+
+    Basic Elements of a Algorithm
+Sequence: Instructions are followed in a specific order, top to bottom.
+Decision: if a condition is met, different subsets of instructions are followed.
+Iteration: Instructions are repeated while a condition is met. These are often referred to as "Loops".
+
+    Complex Algorithms 
+Stacking: Listing algorithm structures(instructions, decisions, and loop) in sequential order.
+Nesting: Instructions, decisions and loops can be listed as the target of decisions and loops. This allows for exponential complexity.
+
+    Pseudocode 
+This idea of using a simplified version of English (or any other human language) to work out and express your algorithm is called pseudocode.
+
+    Flowchart
+A graphical representation of an algorithm that uses few words and simple symbols to make a process easier to understand.
+
+        Flowchart symbols
+    Oval - The start point or the end point of an algorithm
+    Rectangle - represents a step in process or algorithm
+    Parallelogram - input or ouput
+    Diamond - represents a decision
+    A Line w/ Arrow - is a connector that represents the flow through the steps of the process or algorithm.
+
+*Bookmark 1.4.6 Video about Flowchart and Pseudocode*
