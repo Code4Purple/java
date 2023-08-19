@@ -11,4 +11,69 @@ Data Types
             String - tex 
 
 
-*Bookmark 2.1.7 Video to Watch from 0 mins*
+
+----------Java's primitive data types----------------
+    bytes - Integers (whole numbers) range -128 to 128
+    short - Integers range of -32,768 to 32,767
+    int  - Integers range of -2,147,483,648 to +2,147,483,647
+    long - Integers in the range of -9,223,372,036,854,775,808 to +9,223,372,036,854,775,807
+    float - Real numbers in the range of ±3.40282347 x 1038 to 1.40239846 x 10-45
+    double - Real numbers in the range of ±3.40282347 x 1038 to 1.40239846 x 10-45
+    char - Any single character
+    boolean - Only two values: true and false
+
+Type    Size    range
+byte    8       -128 to +127
+short   16      -32,768 to +32,767
+int     32      -2,147,483,648 to +2,147,483,647
+long    64      -9,223,372,036,854,775,808 to +9,223,372,036,854,775,807
+float   32      ±3.40282347 x 1038 to 1.40239846 x 10-45
+double  64      ±1.7976931348623157 x 10308 to 4.9406564584124654 x 10-324
+
+In general use -> Integers are used for whole numbers 
+               -> Double are used for real numbers
+
+** Java String is not a Java primitive type **
+
+Expressions will always evaluate to a value.
+
+        Literal Expressions
+Data Types      Literal Examples
+int             -1 , 0 , 99
+float           123.44f, -3f , 0.0f
+double          123.123 , -3.0 , 0.0
+String          "Hello!",   "Hi" , "123"
+boolean         true(1), false(0) 
+
+Compound Expressions - will always evaluate according to order of operations
+    Operation               Operator
+Parentheses                   ()
+Multiplication & Divison    * , /
+Addition & Subtraction      + , -
+
+                String Escape Sequences
+    Escape Sequences        What it represents
+        \n                      a Newline ( or Return) character
+        \t                      a tab character
+        \"                      it allows the double Quote mark within the console print out -> "Hello"
+        \'                      it allows the singal Quote mark within the console print out -> 'Hello'
+        \\                      it allows the backlash within the console output -> /Hello
+
+                    Java Math
+        Operation               Java Operator
+        Addition                     +
+        Subtraction                  -
+        Multiplication               *
+        Division                     /
+        Modulus (Remainder)          %
+
+Operators are instructions that can tell the computer to do some work.
+The Operators are use in expressions typically made of two operands, one operator that gives an output; 3 + 5 = 8
+
+Integer Division - an int divided by and int will always give an int result in Java.
+
+Compound Expressions - are expressions composed of sub-expressions
+Expression - are list of intructions for the computer to follow to compute a value
+Concatenation - is building longer Strings out of shorter Strings.
+
+**Bookmark 2.7 What is Type Casting**
