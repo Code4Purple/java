@@ -1,0 +1,14 @@
+ASCll is a table of how computers store text into numbers
+Unicode is a tbale of 128,000 characters, punctucation and other symbols convering 135 modern and ancient scripts.
+    Unicode Examples : Braille, Musical Notation, Geometric shapes, Emoticons.
+
+Data Types
+    is way to encode some type of value so that the computer can mainpulate it (using 1s and 0s - Binary Numbers)
+        Common data types 
+            Boolean - true or false statements
+            Ingteger - 14
+            Floating point - 3.14
+            String - tex 
+
+
+*Bookmark 2.1.7 Video to Watch from 0 mins*

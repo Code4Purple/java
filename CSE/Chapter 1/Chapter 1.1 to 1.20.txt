@@ -53,4 +53,14 @@ A graphical representation of an algorithm that uses few words and simple symbol
     Diamond - represents a decision
     A Line w/ Arrow - is a connector that represents the flow through the steps of the process or algorithm.
 
-*Bookmark 1.4.6 Video about Flowchart and Pseudocode*
+Syntax is the set of rules of define the structure of how sentences or statements are formed.
+Semantics is the meaning of a sentence or statement.
+
+Programming Languages
+    Are simple and unambiguous
+    Are context free
+    What you say is what you mean type of thing ; int is always intager.
+
+//      -> Singal Line Comment
+/* */   -> multiple line Comment
+
