@@ -1,3 +1,4 @@
+# 2.0 to 2.6 
 ASCll is a table of how computers store text into numbers
 Unicode is a tbale of 128,000 characters, punctucation and other symbols convering 135 modern and ancient scripts.
     Unicode Examples : Braille, Musical Notation, Geometric shapes, Emoticons.
@@ -76,4 +77,54 @@ Compound Expressions - are expressions composed of sub-expressions
 Expression - are list of intructions for the computer to follow to compute a value
 Concatenation - is building longer Strings out of shorter Strings.
 
-**Bookmark 2.7 What is Type Casting**
+# 2.7 Type Casting
+Java cannot perform operations with operands of different types.
+
+Narrowing Cast : will convert data from a data type with a wider range of valid values to a data type with a narrower range of valid values. Narrowing casts include the following:
+
+            From Type   |   To Type
+            double          float
+            double          int 
+            float           int
+
+Implicit Cast :
+Java will automatically cast a value of a narrower type to an equivalent value of a wider type.
+
+To explicitly cast a value from one data type to another we use the following syntactic form:
+(<dataTypeToCastTo>)valueToCast ; (int)3.0 
+-> You can also get different outputs for values that you need more of scope ; float(3.145 * 3.56 * 56.6777)
+
+# 2.8 Converting Data Types
+Cast Operations & Parse Methods are expressions, and expressions always evaluated to a value.
+
+# 2.9.1 
+    Basic java code setup
+        FILENAME : main.java
+        FILENAME : Contents (below)
+
+        class main {
+            public static void main(string[] arg){
+                **Code Geos here**
+            }
+        }
+
+NOTED : Class names come from the savefiled so your able to run & complie the code
+
+# 2.10
+
+Variable Name : is just an item name.
+Assignment : is the process of taking the variable name and giving it a value ; x = 5 -> Note : the equals sign(=) is what deos the assignment process.
+
+    Vaiable name      |     Assignment Sign |       Value
+       int x                     =                    5
+
+Incrementing the Value : x = x + 1; 
+
+
+# 2.11
+
+Variable Declaration : is a statement that declares a new variable, specifying the variable's name and type. ; int dogs -> Note: Capitalization matters, so dogs is not the same as Dogs.
+
+import java.util.Scanner; -> Imported Library to take Input data from the keyboard input
+
+**Bookmark 2.11.1**
