@@ -128,4 +128,93 @@ Variable Declaration : is a statement that declares a new variable, specifying t
 import java.util.Scanner; -> Imported Library to take Input data from the keyboard input
 
 
-**2.11.5**
+# 2.12
+ 
+Camel case: Lower camel case abuts multiple words, capitalizing each word except the first, as in numApples or peopleOnBus.
+Underscore separated: Words are lowercase and separated by an underscore, as in num_apples or people_on_bus.
+
+                Java reserved words / keywords.
+abstract
+assert
+boolean
+break
+byte
+case
+catch
+char
+class
+const
+continue
+default
+do
+double
+else
+enum
+extends 	
+final
+finally
+float
+for
+goto
+if
+implements
+import
+instanceof
+int
+interface
+long
+native
+new
+package
+private
+protected 	
+public
+return
+short
+static
+strictfp
+super
+switch
+synchronized
+this
+throw
+throws
+transient
+try
+void
+volatile
+while
+
+The words "true", "false", and "null" are also reserved, and used for literals.
+
+# 2.13
+
+Expression -> is any individual item or combination of items, like variables, literals, operators, and parentheses, that evaluates to a value, like 2 * (x + 1)
+
+Literal -> is a specific value in code like 2.
+Operator -> a symbol that performs a built-in calculation, like +, which performs addition.
+
+Arithmetic Operators    |   Description
+    +                           Addition Operator ; x + y
+    -                           Subtraction Operator ; x - y
+    *                           Multiplication Operator ; x * y 
+    /                           Division Operator ; x / y
+
+ 
+                Precedence Rules (order of operations)
+
+ Operator/Convention    |   Description                                             |   Explanation
+        ( )                     Items Witin parentheses are evaluated first                 n 2 * (x + 1), the x + 1 is evaluated first, with the resu then multiplied by 2.
+        unary-                  - used for negation (unary minus) is next                   In 2 * -x, the -x is computed first, with the result then multiplied by 2.
+        * / %           Next to be evaluated are *, /, and %, having equal precedence.      
+        + -                      	Finally come + and - with equal precedence.             In y = 3 + 2 * x, the 2 * x is evaluated first, with the result then added to 3, because * has higher precedence than 
+                                                                                            +. Spacing doesn't matter: y = 3+2 * x would still evaluate 2 * x first. 
+        left to right   If more than one operator of equal precedence could be evaluated, 
+                            evaluation occurs left to righ
+
+# 2.14
+Special operators called compound operators provide a shorthand way to update a variable, such as userAge += 1 being shorthand for userAge = userAge + 1. 
+Other compound operators include -=, *=, /=, and %=. 
+
+
+System.out.printf("%.2f", myFloat);
