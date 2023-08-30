@@ -1,3 +1,9 @@
 # 3.1
 
+        Common Math Methods
+Method      |       Behavior        |       Example
+sqrt(x)             Square Root             Math.sqrt(9.0) evaluates to 3.0
+pow(x,y)            Exponent                Math.pow(6.0, 2.0) -> 6^2 -> 6 * 6 = 36
+abs(x)              Absolute Value          Math.abs(-2.0) -> |-2.0| -> 2.0
+     
 
