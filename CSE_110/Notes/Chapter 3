@@ -1,9 +1,67 @@
 # 3.1
 
-        Common Math Methods
+                Common Math Methods
 Method      |       Behavior        |       Example
 sqrt(x)             Square Root             Math.sqrt(9.0) evaluates to 3.0
 pow(x,y)            Exponent                Math.pow(6.0, 2.0) -> 6^2 -> 6 * 6 = 36
 abs(x)              Absolute Value          Math.abs(-2.0) -> |-2.0| -> 2.0
      
 
+# 3.2 
+
+                                                                Integer Divion (Rounding) : 
+For example if 10 / 4 is equal to 2.5 normally then the exchange of having at a Integer instead of a double is that the Integer will drop the .5 of the fraction.
+
+
+                                                                 Division: Divide by 0 :
+For integer division, the second operand of / or % must never be 0, because division by 0 is mathematically undefined. A divide-by-zero error occurs at runtime if a divisor is 0, causing a program to terminate. A divide-by-zero error is an example of a runtime error, a severe error that occurs at runtime and causes a program to terminate early. In the example below, the program terminates and outputs an error message when the program attempts to divide by daysPerYear, which is 0.
+
+
+                                                                        Modulo (%) :
+The basic arithmetic operators include not just +, -, *, /, but also %. The modulo operator (%) evaluates the remainder of the division of two integer operands. Ex: 23 % 10 is 3.
+Examples:
+    24 % 10 is 4. Reason: 24 / 10 is 2 with remainder 4.
+    50 % 50 is 0. Reason: 50 / 50 is 1 with remainder 0.
+    1 % 2 is 1. Reason: 1 / 2 is 0 with remainder 1.
+
+                                                                        Modulo examples :
+Random number in range.
+Given a random number randNum, % can generate a random number within a range:
+    randNum % 10
+    Yields 0 - 9: Possible remainders are 0, 1, ..., 8, 9. Remainder 10 is not possible: Ex: 19 % 10 is 9, but 20 % 10 is 0.
+    randNum % 51
+    Yields 0 - 50: Note that % 50 would yield 0 - 49.
+    (randNum % 9) + 1
+    Yields 1 - 9: The % 9 yields 9 possible values 0 - 8, so the + 1 yields 1 - 9.
+    (randNum % 11) + 20
+    Yields 20 - 30: The % 11 yields 11 possible values 0 - 10, so the + 20 yields 20 - 30.
+
+# 3.3
+
+                                                                        Type Conversion :
+A type conversion is a conversion of one data type to another, such as an int to a double. The compiler automatically performs several common conversions between int and double types, such automatic conversion known as implicit conversion.
+
+    For an arithmetic operator like + or *, if either operand is a double, the other is automatically converted to double, and then a floating-point operation is performed.
+    For assignments, the right side type is converted to the left side type if the conversion is possible without loss of precision.
+
+int-to-double conversion is straightforward: 25 becomes 25.0.
+
+double-to-int conversion may lose precision, so is not automatic. 
+
+
+                                                                         Type Casting : 
+A type cast explicitly converts a value of one type to another type.
+A programmer can precede an expression with (type) to convert the expression's value to the indicated type. Ex: If myIntVar is 7, then (double)myIntVar converts int 7 to double 7.0. 
+
+
+                                                                         Common errors :
+A common error is to accidentally perform integer division when floating-point division was intended. The program below undesirably performs integer division rather than floating-point division.
+
+# 3.5
+
+ASCII is an early standard for encoding characters as numbers. The following table shows the ASCII encoding as a decimal number (Dec) for common printable characters (for readers who have studied binary numbers, the table shows the binary encoding also). Other characters such as control characters (e.g., a "line feed" character) or extended characters (e.g., the letter "n" with a tilde above it as used in Spanish) are not shown. Source: http://www.asciitable.com/.
+
+Many earlier programming languages like *C or C++ use ASCII.* *Java uses a more recent standard called Unicode.* ASCII can represent 255 items, whereas Unicode can represent over 64,000 items; Unicode can represent characters from many different human languages, many symbols, and more. (For those who have studied binary: ASCII uses 8 bits, while Unicode uses 16, hence the 255 versus 64,000). Unicode's first several hundred items are the same as ASCII. The Unicode encoding for these characters has 0's on the left to yield 16 bits.
+
+
+** Bookmark @3.6 **
