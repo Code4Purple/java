@@ -64,4 +64,68 @@ ASCII is an early standard for encoding characters as numbers. The following tab
 Many earlier programming languages like *C or C++ use ASCII.* *Java uses a more recent standard called Unicode.* ASCII can represent 255 items, whereas Unicode can represent over 64,000 items; Unicode can represent characters from many different human languages, many symbols, and more. (For those who have studied binary: ASCII uses 8 bits, while Unicode uses 16, hence the 255 versus 64,000). Unicode's first several hundred items are the same as ASCII. The Unicode encoding for these characters has 0's on the left to yield 16 bits.
 
 
-** Bookmark @3.6 **
+# 3.6
+
+                                                                                                Strings and string literals:
+
+A string is a sequence of characters. A string literal surrounds a character sequence with double quotes, as in "Hello", "52 Main St.", or "42", vs. an integer literal like 42 or character literal like 'a'. Various characters may be in a string, such as letters, numbers, spaces, or symbols like $ or %, as in "$100 for Julia!!". Earlier sections showed string literals being output, as in: System.out.print("Hello");.
+
+
+                                                                                    Getting a string without whitespaces from input:
+
+A whitespace character is a character used to represent horizontal and vertical spaces in text, and includes spaces, tabs, and newline characters. Ex: "Oh my goodness!" has two whitespace characters, one between h and m, the other between y and g.
+
+Below shows the basic approach to get a string from input into variable userString. The approach automatically skips initial whitespace, then gets characters until the next whitespace is seen (leaving that whitespace in the input).
+
+userString = scnr.next();
+
+# 3.7
+
+                                                                                                    Integer Overflow:
+An integer variable cannot store a number larger than the maximum supported by the variable's data type. An overflow occurs when the value being assigned to a variable is greater than the maximum value the variable can store.   ( Int 32 bits) , (Long 64 bits)
+
+# 3.8
+
+                                                        Integer Numeric Data types:
+           |    Declaration             |                       Size                    |               Supported number range                                      |
+                byte myVar;                                     8 bits                                  -128 to 127
+                short myVar;                                    16 bits                                 -32,768 to 32767
+                int myVar;                                      32 bits                                 -2,147,483,648 to 2,147,483,647
+                long myVar;                                     64 bits                                 -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+
+                                                        Floating-point numeric Data Types
+            |   Declaration             |                       Size                    |               Supported number range         |                  
+                float x;                                        32 bits                                 -3.4x10^38 to 3.4x10^38
+                double x;                                       64 bits                                 -1.7x10^308 to 1.7x10^308
+
+
+# 3.9
+
+                                                                                        Random Numbers Gen (code) :
+import java.util.Random;
+
+public class ThreeRandomValues {
+    public static void main(String[] args){
+        Random randGen = new Random(); // new Random number 
+
+        Sytem.out.println(randGen.nextInt());
+        Sytem.out.println(randGen.nextInt());
+        Sytem.out.println(randGen.nextInt());
+    }
+}
+
+Notes (on code above) :
+    Range of the Random Class is -2^31 to 2^31 - 1.
+    Examples of Ranges withing the Gen:
+            rowNumL = randGen.nextInt(20) + 1;  // 1 to 20
+            colNumL = randGen.nextInt(15) + 1;  // 1 to 15
+
+            rowNumR = randGen.nextInt(20) + 1;  // 1 to 20
+            colNumR = randGen.nextInt(15) + 16; // 16 to 30
+
+
+# 3.10
+
+Debugging is the process of determining and fixing the cause of a problem in a computer program. Troubleshooting is another word for debugging. Far from being an occasional nuisance, debugging is a core programmer task, like diagnosing is a core medical doctor task. Skill in carrying out a methodical debugging process can improve a programmer's productivity.
+
+**Bookmark Lab02 & Lab02-P**
