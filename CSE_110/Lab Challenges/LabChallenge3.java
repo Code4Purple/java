@@ -2,8 +2,6 @@
 
 //import java.util.Scanner;
 
-import javax.swing.text.Style;
-
 public class LabChallenge3 {
     public static void main(String[] args){
         // Scanner 
