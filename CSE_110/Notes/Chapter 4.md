@@ -78,5 +78,12 @@ printf() and format() methods
 Most Java implementations make System.out flush when a newline character is output or println() method is called. 
 
 
-# 4.3 
-**BOOKMARK**
+# 4.3
+    
+    ## Scanner Setup and How to Use
+        import java.util.Scanner;                           --->  Import Class
+        Scanner myObject = new Scanner(System.in);          --->  Object Scanner Setup
+        int variable = myObject.scanInt();                  --->  How to pickup and store the User Input data
+
+
+
