@@ -63,3 +63,23 @@ Note that the return type void means that this method does not return any value.
 *** Example of this at Code: AnimalsPrint.java & it's .class as well ***
 
 ## 7.3 - Define Methods with Parameters
+
+Defining a Method that Takes an Argument
+    We can also define methods that have inputs (i.e. methods that take arguments). It is quite simple to define a method that takes an argument. We just need to include a parameter variable for the argument value in the method's parameter list.
+
+### Code Example:
+
+public class Greeting {
+   public static void main(String[] args) {
+      sayHello("Chen");
+      sayHello("Bobby");
+      sayHello("Ahmed");
+
+      String myName = "Deepa";
+      sayHello(myName);
+   } 
+
+   public static void sayHello(String firstName) {
+      System.out.println("Hello " + firstName + "!");
+   }
+}

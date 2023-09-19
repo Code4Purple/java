@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 
-class LabChallenge2 {
+class PaintCans {
     public static void main (String[] args){
         // Defines
         Scanner sncr = new Scanner(System.in);
