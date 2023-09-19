@@ -1,0 +1,65 @@
+# Chapter 7 
+
+## 7.1 - User-defined method basics
+### Methods (general)
+    A program may perform the same operation repeatedly, causing a large and confusing program due to redundancy. Program redundancy can be reduced by creating a grouping of predefined statements for repeatedly used operations, known as a method. Even without redundancy, methods can prevent a main program from becoming large and confusing.
+
+
+Basics of methods
+    A method is a named list of statements.
+        A method definition consists of the new method's name and a block of statements. Ex: public static double calcPizzaArea() { /* block of statements */ }
+        A method call is an invocation of a method's name, causing the method's statements to execute.
+The method's name can be any valid identifier. A block is a list of statements surrounded by braces. 
+
+
+### Parameters
+    A programmer can influence a method's behavior via an input.
+        A parameter is a method input specified in a method definition. Ex: A pizza area method might have diameter as an input.
+        An argument is a value provided to a method's parameter during a method call. Ex: A pizza area method might be called as printPizzaArea(12.0) or as printPizzaArea(16.0).
+A parameter is like a variable declaration. Upon a call, the parameter's memory location is allocated, and the parameter is assigned with the argument's value. Upon returning to the original call location, the parameter is deleted from memory.
+
+An argument may be an expression, like 12.0, x, or x * 1.5.
+
+## 7.2 - Define Methods with No Parameters and Return Value
+
+### Defining Simple Methods
+
+    We have seen some examples of how to call methods previously, and we have taken a look at some of the many methods already available to us in the Java standard library. Now we will learn how to define our own methods! Defining a method is a way to specify how an operation or computation is to be done, and to name that operation or computation.
+
+    We will start with a simple method that takes no arguments and returns no value. Such methods are useful for simple repetitive tasks. Say for example, that you would like to display a little ACSII art bunny on the terminal window. You could write some code like this:
+
+    System.out.println(" (\\(\\   ");
+    System.out.println(" (-.-)    ");
+    System.out.println(" O_(\")(\") ");
+
+    ***If there is not already a method to do what we want, then we should define a method to do it.***
+            Idea is if we have to call it more than once then define it in its own method so you can repeat the call without recreating everything for bunny above.
+    
+    So, how do we define a method?
+    Here's the basic syntax for defining a method in Java.
+
+### Syntax of Simple Methods:
+public static <returnType> <methodName>(<parameterList>) {
+<methodBody>
+}
+
+Notice that a method definition may include some access modifiers which will be discussed in more detail later. We will be using the public static access modifiers for now. A method definition will always have these parts:
+
+    <returnType> - the type of value this method will return
+    <methodName> - the name for this list of instructions
+    (<parameterList>) - describing the arguments that must be passed to this method
+    {<methodBody>} - the list of instructions to execute when this method is called
+
+Here is an example, defining a method named printBunny.
+
+public static void printBunny() {
+   print(" (\\(\\   ")
+   print(" (-.-)    ")
+   print(" O_(\")(\") ")
+}
+
+Note that the return type void means that this method does not return any value. This method does print something to the terminal window when you call it, but it does not return anything. The method's name is printBunny. Also note that the parameter list for this method definition is empty (); this means that you will not pass any arguments to this method when you call it. Finally note, that the method body is always contained inside of a pair of curly braces { }.
+
+*** Example of this at Code: AnimalsPrint.java & it's .class as well ***
+
+## 7.3 - Define Methods with Parameters
