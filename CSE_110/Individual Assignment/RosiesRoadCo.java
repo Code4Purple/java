@@ -16,7 +16,7 @@ public class RosiesRoadCo {
     public static int numberOfStoplights(double miles, int lanes) {
       // Use the values stored in the miles and lanes parameter variables
       // to calculate the total number of stoplights needed.
-         double stoplightsPerIntersection = 2 + lanes; 
+         double stoplightsPerIntersection = lanes; 
          double numberOfIntersections = Math.floor(miles) * 2;
          int totalStoplights = (int)(stoplightsPerIntersection * numberOfIntersections);
 
