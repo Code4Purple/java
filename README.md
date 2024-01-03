@@ -9,6 +9,3 @@
 
 
 ### What notes went into which Lab Challenges!
-1. Chapter 1 to Chapter 2 knowledge went into the LabChallenge1.java 
-2. Chapter 1 to Chapter 3 knowledge went into the LabChallenge2.java
-3. 
