@@ -8,5 +8,5 @@
 5. if everything went good with the **CMD commands** above (*1 through 3*)
 
 
-### What notes went into which Lab Challenges!
-test
+## Chapter Outlines
+'
