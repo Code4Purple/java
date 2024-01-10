@@ -1,0 +1,16 @@
+intro to computer science
+data types, expressions and Variables (Part 1)
+data types, expressions and variables (Part 2)
+Console I/O and Sequence
+Branches (Decisions)
+Methods Part 1
+loops (Repetition)
+Midterm Exam
+Methods Part 2
+Arrays
+ArrayLists and File I/O
+Object Oriented Programming Part 1
+Object Oriented Programming Part 2
+The End of the Beginning
+Final Exam
+
