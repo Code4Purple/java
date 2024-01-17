@@ -95,3 +95,5 @@ After computers were invented and occupied entire rooms, engineers created small
 single chip called an integrated circuit, or IC. Engineers continued to make transistors smaller, leading to Moore's Law: the doubling of IC capacity 
 roughly every 18 months, which continued for several decades.
 
+
+
