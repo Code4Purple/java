@@ -1,0 +1,268 @@
+
+---------------------------------------------------------------------------------------------------------------------------------
+                                2.1 & 2.2
+---------------------------------------------------------------------------------------------------------------------------------
+
+ASCII and UNICODE are two systems for encoding and decoding text using numbers.
+
+Data Type is way to encode some type of value so that a computer can manipulate it - using only ones and zeros (Binary numbers).
+
+                                * Common Data Types *
+
+Boolean         - representing only true or false values. These are used in logic expressions and decisions.
+
+Integer         - representing positive or negative whole numbers without a fractional part. Examples: -127, 8, 65535.
+
+Floating Point  - representing positive or negative numbers with a fractional component. Examples: 3.1415, 2.0, -123.456.
+
+String          - representing textual information as a sequence of encoded characters. Examples: "Hello!", "This is a String.".
+
+                           
+                            * Java's Primitive data type *
+
+byte    - Integers (whole numbers) in the range of -128 to +127
+
+short   - Integers in the range of -32,768 to +32,767
+
+int     - Integers in the range of -2,147,483,648 to +2,147,483,647
+
+long    - Integers in the range of -9,223,372,036,854,775,808 to +9,223,372,036,854,775,807
+
+float   - Real numbers in the range of ±3.40282347 x 1038 to 1.40239846 x 10-45
+
+double  - Real numbers in the range of ±1.7976931348623157 x 10308 to 4.9406564584124654 x 10-324
+
+char    - Any single character
+
+boolean - Only two values: true and false
+
+                    * Bits and Ranges of the Primitive Types *
+	
+-------------------------------------------------------------------------------------------------
+        Type    Size(bits)        Range
+-------------------------------------------------------------------------------------------------    
+        byte        8          -128 to +127
+
+        short       16          -32,768 to +32,767
+
+        int         32          -2,147,483,648 to +2,147,483,647
+
+        long        64          -9,223,372,036,854,775,808 to +9,223,372,036,854,775,807
+	
+        float       32          ±3.40282347 x 1038 to 1.40239846 x 10-45
+
+        double      64          ±1.7976931348623157 x 10308 to 4.9406564584124654 x 10-324
+
+
+Choose int for whole numbers (In general)
+
+Choose double for real numbers (In general)
+	
+Java's String Data Type is not a primitive type.
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+                                2.3
+---------------------------------------------------------------------------------------------------------------------------------
+
+Expressions always evaluate to a value.
+
+for example : int has a value of 123
+
+String literals can include special characters (called escape sequences) like a Newline or a Tab. 
+These escape sequences (special characters) are represented in a String literal by a pair of characters starting with a backslash 
+(\) and followed by a regular character.
+
+        *   escape sequences    *
+
+\n      a Newline (or Return) character
+
+\t      a Tab character
+
+\"      a Double Quote mark. This is used to include a Double Quote mark as a character in a String literal. 
+        For example: we can encode the String: He said "Hello!"
+
+\'      a Single Quote mark. For example, we can represent a Single Quote mark as a char literal like this:
+
+'\''    Note that there are three single quote marks in the char literal above.
+
+\\      a Backslash character. Because Java assumes that a Backslash in a String literal is the start of an escape sequence,
+         we need this special escape sequence to represent a single Backslash character in a String literal.
+
+---------------------------------------------------------------------------------------------------------------------------------
+                                2.4 & 2.5
+---------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------
+    Java Math operators
+----------------------------
+    Addition        +
+
+    Subtraction     -
+
+    Multiplication  *
+
+    Division        /
+
+    Modulus         %
+
+Operators operate on operands.
+Operands are inputs and the result is the output.
+Operators are instructions telling the computer to do some work.
+Integer Division: An int divided by and int will always give an int result in Java.
+
+-----
+
+Compound Expressions are expressions composed of sub-expressions.
+An Expression is a list of instructions for the computer to follow to compute a value.
+
+---------------------------------------------------------------------------------------------------------------------------------
+                                2.6 to 2.11
+---------------------------------------------------------------------------------------------------------------------------------
+
+Concatenation is building longer Strings out of shorter Strings.
+For example: "string1" + " string2" will make this for the output string1 string2
+
+---------
+
+It is often desirable or even necessary to convert data from one data type to another. For example, if we have two integer values that we want to divide, 
+but we want to avoid the precision that could be lost due to integer division rules in Java. For such situations, we can use cast operations.
+
+
+There are two general categories of cast operations: widening casts and narrowing casts. As the name implies, a widening cast will 
+convert data from a data type with a narrower range of valid values to a data type with a wider range of valid values.
+
+* Implicit Casting *
+
+In fact Java will often do these widening casts for you automatically. 
+One example of this is when you may try to add, subtract, multiply, or divide two numbers 
+represented as different data types. 
+In the example below, we are trying to multiply an int (3) by a double (2.5).
+
+Java cannot perform operations with operands of different types.
+
+Implicit Cast - Java will automatically cast a value of a narrower type to an equivalent value of a wider type.
+
+* Explicit Casting *
+
+It is also possible to perform casting operations manually. We can do this for both widening casts and 
+for narrowing casts. As the name implies, a narrowing cast will convert data from a data type with a 
+wider range of valid values to a data type with a narrower range of valid values. 
+
+-------
+
+* String Parsing Example *
+
+public class ImplicitCastExample {
+   public static void main(String[] args) {
+      System.out.println(Integer.parseInt("123"));
+      System.out.println(Double.parseDouble("123.456789"));
+ 
+      System.out.println(Float.parseFloat("123") * Float.parseFloat("45.678"));
+  }
+}
+
+output (by each line) : 123
+                        123.456789
+                        5618.394
+
+Cast Operations & Parse Methods : are expressions, and expressions always evaluated to a value.
+
+----------
+
+
+Variables and assignments
+
+    In a program, a variable is a named item, such as x or numPeople, used to hold a value.
+
+    An assignment assigns a variable with a value, such as x = 5. That assignment means x is assigned with 5, and x keeps 
+    that value during subsequent assignments, until x is assigned again. 
+
+
+Assignments with variable on left and right
+
+    Because in programming = means assignment, a variable may appear on both the left and right as in x = x + 1. 
+    If x was originally 6, x is assigned with 6 + 1, or 7. The assignment overwrites the original 6 in x.
+
+    Increasing a variable's value by 1, as in x = x + 1, is common, and known as incrementing the variable.
+
+--------------------
+
+
+Assignment statements
+
+An assignment statement assigns the variable on the left-side of the = with the current value of the right-side expression. 
+Ex: numApples = 8; assigns numApples with the value of the right-side expression (in this case 8). assign
+
+An expression may be a number like 80, a variable name like numApples, or a simple calculation like numApples + 1. 
+Simple calculations can involve standard math operators like +, -, and *, and parentheses as in 2 * (numApples - 1). 
+An integer like 80 appearing in an expression is known as an integer literal.
+
+---------------------------------------------------------------------------------------------------------------------------------
+                                2.12 & 2.13
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+Rules for identifiers
+
+A name created by a programmer for an item like a variable or method is called an identifier. An identifier must:
+
+    be a sequence of letters (a-z, A-Z), underscore (_), dollar signs ($), and digits (0-9)
+    start with a letter, underscore, or dollar sign
+
+Note that "_", called an underscore, and "$", called a dollar sign or currency symbol, are considered to be letters. 
+A good practice followed by many Java programmers is to not use _ or $ in programmer-created identifiers.
+
+Identifiers are case sensitive, meaning upper and lower case letters differ. So numCats and NumCats are different.
+
+A reserved word is a word that is part of the language, like int, short, or double. A reserved word is also known as a keyword. 
+A programmer cannot use a reserved word as an identifier. Many language editors will automatically color a program's reserved words
+
+
+Style guidelines for identifiers
+
+While various (crazy-looking) identifiers may be valid, programmers may follow identifier naming conventions (style) defined by their company, team, teacher, etc. Two common conventions for naming variables are:
+
+    Camel case: Lower camel case abuts multiple words, capitalizing each word except the first, as in numApples or peopleOnBus.
+    Underscore separated: Words are lowercase and separated by an underscore, as in num_apples or people_on_bus.
+
+Neither convention is better. The key is to be consistent so code is easier to read and maintain.
+
+----------------------
+
+Arithmetic Expressions  
+    
+        Basics
+
+An expression is any individual item or combination of items, like variables, literals, operators, and parentheses, 
+that evaluates to a value, like 2 * (x + 1). A common place where expressions are used is on the right side of an 
+assignment statement, as in y = 2 * (x + 1).
+
+A literal is a specific value in code like 2. An operator is a symbol that performs a built-in calculation, like +, 
+which performs addition. Common programming operators are shown below.
+
+Arithmetic Operators : +, / , * , -
+
+
+Evaluation of expressions
+
+An expression evaluates to a value, which replaces the expression. Ex: If x is 5, then x + 1 evaluates to 6, and y = x + 1 assigns y with 6.
+
+An expression is evaluated using the order of standard mathematics, such order known in programming as precedence rules, listed below.
+
+
+Operator/Convention 	            Description 	                                                Explanation
+--------------------------------------------------------------------------------------------------------------------------------
+( ) 	                Items within parentheses are evaluated first 	                    In 2 * (x + 1), the x + 1 is evaluated first, with the result then multiplied by 2.
+
+unary - 	            - used for negation (unary minus) is next 	                        In 2 * -x, the -x is computed first, with the result then multiplied by 2.
+
+* / % 	                Next to be evaluated are *, /, and %, having equal precedence. 	    (% is discussed elsewhere)
+
++ - 	                Finally come + and - with equal precedence. 	                    In y = 3 + 2 * x, the 2 * x is evaluated first, with the result then added to 3, 
+                                                                                            because * has higher precedence than +. Spacing doesn't matter: y = 3+2 * x would still evaluate 2 * x first.
+
+left-to-right 	        If more than one operator of equal precedence could be evaluated,   In y = x * 2 / 3, the x * 2 is first evaluated, with the result then divided by 3. 
+                        evaluation occurs left to right. 	                               
+
+                       

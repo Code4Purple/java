@@ -1,14 +1,15 @@
-
 ---------------------------------------------------------------------------------------------------------------------------------
-                                1.10
+                                1.7
 ---------------------------------------------------------------------------------------------------------------------------------
 
 Algorithm  
 
 A list of intructions that, when followed, solves a problem
 
+ *Note Algorithm Section is in the 1.10*
+
 ----------------------------------------------------------------------------------------------------------------------------------
-                                1.11
+                                1.8
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Switches
@@ -50,7 +51,7 @@ Then, the real processor runs a program, sometimes called a virtual machine, tha
 Such an approach may yield slower program execution, but has the advantage of portable executables.
 
 ----------------------------------------------------------------------------------------------------------------------------------
-                                1.12
+                                1.9
 ----------------------------------------------------------------------------------------------------------------------------------
 
 A computer typically consists of several components (see animation below):
@@ -96,4 +97,215 @@ single chip called an integrated circuit, or IC. Engineers continued to make tra
 roughly every 18 months, which continued for several decades.
 
 
+----------------------------------------------------------------------------------------------------------------------------------
+                                1.10
+----------------------------------------------------------------------------------------------------------------------------------
 
+The basic elements of a structured algorithm are:
+    Sequence: Instructions are followed in a specific order, top to bottom.
+    Decision:  If a condition is met, different subsets of instructions are followed.
+    Iteration: Instructions are repeated while a condition is met. These are often referred to as 'loops'.
+    
+We can compose complex algorithms by:
+    Stacking:  Listing algorithm structures (instructions, decisions, and loop) in sequential order.
+    Nesting: Instructions, decisions, and loops can be listed as the target of decisions and loops. 
+        This allows for exponential complexity.
+    
+Pseudocode
+    An informal, high-level; description of an algorithm, intended for maximum human readability.
+
+Flowchart
+    A graphical representation of an algorithm that uses few words and simple symbols to make a process easier to understand.
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+                                1.11
+----------------------------------------------------------------------------------------------------------------------------------
+
+Computer program basics
+
+    Computer programs are abundant in many people's lives today, carrying out applications on smartphones, tablets, and laptops, 
+    powering businesses like Amazon and Netflix, helping cars drive and planes fly, and much more.
+
+A computer program consists of instructions executing one at a time. Basic instruction types are:
+
+    Input: A program gets data, perhaps from a file, keyboard, touchscreen, network, etc.
+    Process: A program performs computations on that data, such as adding two values like x + y.
+    Output: A program puts that data somewhere, such as to a file, screen, network, etc.
+
+Programs use variables to refer to data, like x, y, and z below. The name is due to a variable's value varying as a 
+ program assigns a variable like x with new values.
+
+
+Computational thinking
+
+Mathematical thinking became increasingly important throughout the industrial age to enable people to successfully live and work. 
+In the information age, many people believe computational thinking, or creating a sequence of instructions to solve a problem, 
+will become increasingly important for work and everyday life. A sequence of instructions that solves a problem is called an algorithm.
+
+----------------------------------------------------------------------------------------------------------------------------------
+                                1.12
+----------------------------------------------------------------------------------------------------------------------------------
+
+A first program
+
+A simple Java program appears below.
+
+    A program starts in main(), executing the statements within main's braces { }, one at a time.
+    Each statement typically appears alone on a line and ends with a semicolon, as English sentences end with a period.
+    The int wage statement creates an integer variable named wage. The wage = 20 statement assigns wage with 20.
+    The print and println statements output various values.
+
+Basic Input
+    The following code at the top of a file enables the program to get input:
+        import java.util.Scanner;
+    
+    To get input example : x = scnr.nextInt(); 
+
+
+Basic output: Text
+
+The System.out.print construct supports output. Outputting text is achieved via: System.out.print("desired text");. 
+Text in double quotes " " is known as a string literal. Multiple output statements continue printing on the same output line. 
+
+----------------------------------------------------------------------------------------------------------------------------------
+                                1.13
+----------------------------------------------------------------------------------------------------------------------------------
+
+Two important concepts in the study of languages are the concepts of syntax and semantics. 
+
+
+Syntax is the set of rules that define the structure of how sentences or statements are formed. In a natural language like English, 
+syntax defines the ways that nouns and verbs and other parts of the language can be combined in a sequence to create a grammatically correct sentence.
+
+
+For example, "Through raced green the car red the light." is not a syntactically correct sentence in English. It is still interesting to 
+notice that you are probably able to infer the meaning of this text, even though it is not grammatically correct. On the other hand, 
+"The green car raced through the red light." is a syntactically correct sentence in English.
+
+Semantics is the meaning of a sentence or statement. For example the meaning of the English sentence "My dad woke up." is something to the 
+effect that a biological process characterized by unconsciousness ceased in a person, who is the writer's male parent.  
+
+
+Natural languages are complex and open to interpretation, with loose rules for grammar and syntax. 
+Words and phrases can have multiple meanings.
+
+Here are a couple of examples of natural phrases with multiple meanings:
+
+    Time flies like an arrow; fruit flies like a banana.
+    He fed her cat food.
+    One morning I shot an elephant in my pajamas
+
+Programming languages are simple and unambiguous:
+
+    With strict rules for grammar and syntax
+    Instructions (statements) can have only one meaning
+
+Natural languages are context sensitive. The same thing said or written in one context or setting, can have a different meaning in another context.
+
+
+Programming languages are context free:
+
+    The same text always has the same meaning, regardless of context.
+    The meaning of any statement does not depend on the context or surrounding statements.
+    A line of code always has a single meaning.
+
+Human brains are very different from computers, and can easily infer meaning from the context, and from what was previously or subsequently said or written.
+
+
+Computers, which are machines, must be able to unambiguously interpret every instruction in a program.
+
+
+The fact that computers can only interpret programs written in simple languages and cannot infer meaning based on context or nuance, is actually the source of their power and usefulness. 
+Computers are able to repeatedly execute simple instructions extremely fast and without error because there is no ambiguity. It is necessary that a programming language be simple, unambiguous, 
+and free from the nuances of context so that we can specify the instructions for the computer with the precision required for a machine (that can only do exactly what it is told) to perform.
+
+What is Java?
+
+Java is a general purpose programming language that is designed to support writing programs that are platform independent (Can be executed on Windows, Mac, Mobile, etc.).
+
+Java is Class-based and Object Oriented, which means that it is designed for Object Oriented Programming. We will learn more about what this means later in the semester.
+
+Java is strongly typed - meaning that we must declare the types of variables that we use, and they must remain the same type throughout execution of a program.
+
+Java is a compiled language, but Java bytecode runs on the Java Virtual Machine (JVM). This means that the Java source code that we write is translated into bytecode by the Java compiler. This bytecode is not executed directly by the computer, but by an interpreter program called the Java Virtual Machine. This means that bytecode is portable across operating systems and computer types, as long as someone has written a version of the Java Virtual machine for that platform. 
+The JVM then only needs to be written once for a platform, and most programs written in Java can be executed on any machine without modifying the source code.
+
+----------------------------------------------------------------------------------------------------------------------------------
+                                1.15
+----------------------------------------------------------------------------------------------------------------------------------
+
+A comment is text a programmer adds to code, to be read by humans to better understand the code but ignored by the compiler. Two common kinds of comments exist:
+
+    A single-line comment starts with // and includes all the following text on that line. Single-line comments commonly appear after a statement on the same line.
+    A multi-line comment starts with /* and ends with */, where all text between /* and */ is part of the comment. A multi-line comment is also known as a block comment.
+
+
+Whitespace refers to blank spaces (space and tab characters) between items within a statement and blank lines between statements (called newlines). A compiler ignores 
+most whitespace.
+
+Good practice is to deliberately and consistently use whitespace to make a program more readable. Programmers usually follow conventions defined by 
+their company, team, instructor, etc., such as:
+
+    Use blank lines to separate conceptually distinct statements.
+    Indent lines the same amount.
+    Align items to reduce visual clutter.
+    Use a single space before and after any operators like =, +, *, or / to make statements more readable.
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+                                1.16
+----------------------------------------------------------------------------------------------------------------------------------
+
+Whitespace and precise formatting
+
+For program output, whitespace is any blank space or newline. Most coding activities strictly require a student program's output to exactly match the expected output, including whitespace. Students learning programming often complain:
+"My program is correct, but the system is complaining about output whitespace. "
+
+However, correctness often includes output being formatted correctly.
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+                                1.17
+----------------------------------------------------------------------------------------------------------------------------------
+
+Syntax errors
+
+People make mistakes. Programmers thus make mistakes—lots of them. One kind of mistake, known as a syntax error, is to violate a 
+programming language's rules on how symbols can be combined to create a program.
+An example is forgetting to end a statement with a semicolon.
+
+
+Logic errors
+
+Because a syntax error is detected by the compiler, a syntax error is known as a type of compile-time error.
+New programmers commonly complain: "The program compiled perfectly but isn't working." Successfully compiling means the 
+program doesn't have compile-time errors, but the program may have other kinds of errors. A logic error, also called a bug, 
+is an error that occurs while a program runs. For example, a programmer might mean to type numBeans * numJars but accidentally 
+types numBeans + numJars (+ instead of *). The program would compile but would not run as intended.
+
+
+
+Compiling frequently
+
+Good practice, especially for new programmers, is to compile after writing only a few lines of code, 
+rather than writing tens of lines and then compiling. New programmers commonly write tens of lines before compiling, 
+which may result in an overwhelming number of compilation errors and warnings and logic errors that are hard to detect and correct.
+
+----------------------------------------------------------------------------------------------------------------------------------
+                                1.18 to 1.20
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+Programming languages vs. problem solving
+
+A chef may write a new recipe in English, but creating a new recipe involves more than just knowing English. Similarly, 
+creating a new program involves more than just knowing a programming language. 
+Programming is largely about problem solving: creating a methodical solution to a given task.
+
+
+Precision, logic, and computational thinking
+
+Many people find that programming encourages precise, logical thought that can lead to better writing and speaking, 
+clearer processes, and more. The thought processes needed to build correct, precise, logical programs is sometimes 
+called computational thinking and has benefits beyond programming.
