@@ -1,0 +1,22 @@
+---------------------------------------------------------------------------------------------------------------------------------
+                                3.1
+---------------------------------------------------------------------------------------------------------------------------------
+
+Some programs require math operations beyond +, -, *, /, like computing a square root. 
+A standard Math class has about 30 math operations, known as methods. The Math class is part of Java's 
+standard language package, so no import is required.
+
+A method is a list of statements executed by invoking the method's name, such invoking is known as a 
+method call. Any method input values, or arguments, appear within ( ), separated by commas if more than one. 
+A programmer must precede the method name with Math. to call a Math class method.
+
+Method      Behavior                Example
+sqrt(x)     square root of x        Math.sqrt(9.0)     evaluates to 3.0
+pow(x, y)   Power: x^y              Math.pow(6.0, 2.0) evaluates to 36.0
+abs(x)      Absolute value of x     MAth.abs(-99.5)    evaluates to 99.5
+
+
+Division: Integer rounding
+    When the operands of / are integers, the operator performs integer division, which does not generate 
+    any fraction.
+
