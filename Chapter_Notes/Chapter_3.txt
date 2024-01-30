@@ -1,5 +1,5 @@
 ---------------------------------------------------------------------------------------------------------------------------------
-                                3.1
+                                3.1 to 3.9
 ---------------------------------------------------------------------------------------------------------------------------------
 
 Some programs require math operations beyond +, -, *, /, like computing a square root. 
@@ -15,8 +15,257 @@ sqrt(x)     square root of x        Math.sqrt(9.0)     evaluates to 3.0
 pow(x, y)   Power: x^y              Math.pow(6.0, 2.0) evaluates to 36.0
 abs(x)      Absolute value of x     MAth.abs(-99.5)    evaluates to 99.5
 
+----------------------------------------------------------------------
 
 Division: Integer rounding
     When the operands of / are integers, the operator performs integer division, which does not generate 
     any fraction.
 
+
+Division: Divide by 0
+
+For integer division, the second operand of / or % must never be 0, because division by 0 is mathematically 
+undefined. A divide-by-zero error occurs at runtime if a divisor is 0, causing a program to terminate. 
+A divide-by-zero error is an example of a runtime error, a severe error that occurs at runtime and causes a 
+program to terminate early. In the example below, the program terminates and outputs an error message when 
+the program attempts to divide by daysPerYear, which is 0.
+
+
+Modulo (%)
+
+The basic arithmetic operators include not just +, -, *, /, but also %. The modulo operator (%) evaluates 
+the remainder of the division of two integer operands. Ex: 23 % 10 is 3.
+
+Examples:
+
+    24 % 10 is 4. Reason: 24 / 10 is 2 with remainder 4.
+    50 % 50 is 0. Reason: 50 / 50 is 1 with remainder 0.
+    1 % 2 is 1. Reason: 1 / 2 is 0 with remainder 1.
+
+---------------------------------------------------------------------
+
+Type conversions
+
+A calculation sometimes must mix integer and floating-point numbers. For example, given that about 50.4% of 
+human births are males, then 0.504 * numBirths calculates the number of expected males in numBirths births. 
+If numBirths is an int variable (int because the number of births is countable), then the expression combines 
+a floating-point and integer.
+
+A type conversion is a conversion of one data type to another, such as an int to a double. The compiler 
+automatically performs several common conversions between int and double types, such automatic conversions 
+are known as implicit conversion.
+
+    For an arithmetic operator like + or *, if either operand is a double, the other is automatically 
+    converted to double, and then a floating-point operation is performed.
+    
+    For assignments, the right side type is converted to the left side type if the conversion is 
+    possible without loss of precision.
+
+int-to-double conversion is straightforward: 25 becomes 25.0.
+
+double-to-int conversion may lose precision, so is not automatic.
+
+
+
+Type casting
+
+A programmer sometimes needs to explicitly convert an item's type. Ex: If a program needs a floating-point 
+result from dividing two integers, then at least one of the integers needs to be converted to double so 
+floating-point division is performed. Otherwise, integer division is performed, evaluating to only the 
+quotient and ignoring the remainder. A type cast explicitly converts a value of one type to another type.
+
+A programmer can precede an expression with (type) to convert the expression's value to the indicated type. 
+Ex: If myIntVar is 7, then (double)myIntVar converts int 7 to double 7.0.
+
+A common type cast converts a double to an int. Ex: myInt = (int)myDouble. The fractional part is truncated. 
+Ex: 9.5 becomes 9.
+
+-------------------------------------------------------------------------------------------------------------
+
+Binary
+
+Normally, a programmer can think in terms of base ten numbers. However, a compiler must allocate some 
+finite quantity of bits (e.g., 32 bits) for a variable, and that quantity of bits limits the range of 
+numbers that the variable can represent. Thus, some background on how the quantity of bits influences 
+a variable's number range is helpful.
+
+Because each memory location is composed of bits (0s and 1s), a processor stores a number using base 2, 
+known as a binary number.
+
+For a number in the more familiar base 10, known as a decimal number, each digit must be 0-9 and each 
+digit's place is weighed by increasing powers of 10.
+
+The compiler translates decimal numbers into binary numbers before storing the number into a memory location. 
+The compiler would convert the decimal number 212 to the binary number 11010100, 
+meaning 1*128 + 1*64 + 0*32 + 1*16 + 0*8 + 1*4 + 0*2 + 0*1 = 212, and then store that binary number in memory. 
+
+--------------------------------------------------------------------------------------------------------------
+
+Characters
+
+Basics
+
+A variable of char type, as in char myChar;, can store a single character like the letter m. 
+A character literal is surrounded with single quotes, as in myChar = 'm';.
+
+
+Getting a character from input
+
+Java does not have a method for getting one character from input. Instead, the following sequence can be used: 
+myChar = scnr.next().charAt(0); The charAt(0) is explained in another section. Briefly, next() gets the next 
+sequence of non-whitespace characters (as a string), and charAt(0) gets the first character in that string.
+
+
+A character is internally stored as a number
+
+Under the hood, a char variable stores a number. Ex: 'a' is stored as 97. In an output statement, 
+the compiler outputs the number's corresponding character.
+
+ASCII is an early standard for encoding characters as numbers. The following table shows the ASCII encoding as 
+a decimal number (Dec) for common printable characters (for readers who have studied binary numbers, the table 
+shows the binary encoding also)
+
+
+
+Escape sequences
+
+In addition to regular characters like Z, $, or 5, character encoding includes numbers for several special 
+characters. Ex: A newline character is encoded as 10. Because no visible character exists for a newline, 
+the language uses an escape sequence
+
+
+Outputting multiple character variables with one output statement
+
+A programmer can output multiple character variables with one statement as follows: 
+System.out.print("" + c1 + c2);. The initial "" tells the compiler to output a string of characters, 
+and the +'s combine the subsequent characters into such a string. Without the "", 
+the compiler will simply add the numerical values of c1 and c2, and output the resulting sum.
+
+----------------------------------------------------------------------------------------------------------------
+
+Strings and string literals
+
+A string is a sequence of characters. A string literal surrounds a character sequence with double quotes, as 
+in "Hello", "52 Main St.", or "42", vs. an integer literal like 42 or character literal like 'a'. 3
+Various characters may be in a string, such as letters, numbers, spaces, or symbols like $ or %, as in 
+"$100 for Julia!!". Earlier sections showed string literals being output, as in: System.out.print("Hello");.
+
+
+String variables and assignments
+
+Some variables should hold a string. A programmer declares a string variable similarly to declaring 
+char, int, or double variables, by using the String data type. Note the capital S.
+
+A String variable is a reference type (discussed in depth elsewhere) variable that refers to a String object.
+An object consists of some internal data items plus operations that can be performed on that data. 
+Ex: String movieTitle = "Frozen"; declares a String reference variable named movieTitle that refers to a 
+String object. That String object stores the string "Frozen".
+
+A programmer can assign a String variable with a string literal, which creates a new String object. 
+Ex: movieTitle = "The Martian"; creates a new String object with the string "The Martian", and assigns 
+the String object's reference to the variable movieTitle.
+
+Assigning one String variable to another String variable causes both variables to refer to the same String, 
+and does not create a new String. Ex: movieTitle = favoriteMovie; assigns favoriteMovie's reference to 
+movieTitle. Both movieTitle and favoriteMovie refer to the same String object.
+
+A programmer can initialize a string variable during declaration, as in String firstMonth = "January";.
+
+
+Getting a string without whitespaces from input
+
+A whitespace character is a character used to represent horizontal and vertical spaces in text, and 
+includes spaces, tabs, and newline characters. Ex: "Oh my goodness!" has two whitespace characters, 
+one between h and m, the other between y and g.
+
+Below shows the basic approach to get a string from input into variable userString. The approach 
+automatically skips initial whitespace, then gets characters until the next whitespace is seen.
+
+userString = scnr.next();
+userString = scnr.nextLine();
+
+Example of them :
+
+ If the input is Ina 45 Second Avenue, then the output is:
+
+ Ina
+ 45 Second Avenue
+
+Your code will look like this : 
+
+import java.util.Scanner;
+
+public class HomeAddress {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      String userName;
+      String userAddress;
+
+      userName = scnr.next();
+      userAddress = scnr.nextLine();
+
+		System.out.println(userName);
+		System.out.println(userAddress);
+   }
+}
+---------------------------------------------------------------------------------------------------------------------------
+
+Integer OverFlow
+
+An integer variable cannot store a number larger than the maximum supported by the variable's data type. 
+An overflow occurs when the value being assigned to a variable is greater than the maximum value the variable can store.
+
+A common error is to try to store a value greater than about 2 billion into an int variable. For example, the decimal number 
+4,294,967,297 requires 33 bits in binary, namely 100000000000000000000000000000001 (we chose the decimal number for easy 
+binary viewing). Trying to assign that number into an int results in overflow. The 33rd bit is lost and only the lower 
+32 bits are stored, namely 00000000000000000000000000000001, which is decimal number 1.
+
+---------------------------------------------------------------------------------------------------------------------
+
+Numeric data types
+
+int and double are the most common numeric data types. 
+However, several other numeric types exist. The following table summarizes available integer numeric data types. 
+    Declaration             Size                Supported number range
+------------------------------------------------------------------------------------------------------------------    
+    byte myVar;             8 bits              =128 to 127
+    short myVar;            16 bits             -32,768 to 32,767
+    int myVar;              32 bits             -2,147,483,648 to 2,147,483,647
+    long myVar;             64 bits             -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+
+
+
+
+
+int is the most commonly used integer type.
+
+long is used for integers expected to exceed about 2 billion.
+
+In case the reader is wondering, the language does not have a simple way to print numbers with commas. 
+So if x is 8000000, printing 8,000,000 is not trivial.
+
+A common error made by a program's user is to enter the wrong type, such as entering a string when the input statement was myInt 
+= scnr.nextInt(); where myInt is an int, which can cause strange program behavior.
+
+short is rarely used. One situation is to save memory when storing many (e.g., tens of thousands) of smaller numbers, 
+which might occur for arrays (another section). Another situation is in embedded computing systems having a tiny processor 
+with little memory, as in a hearing aid or TV remote control. Similarly, byte is rarely used, except as noted for short
+
+
+floating-point numeric data types:
+
+Declaration 	Size 	    Supported number range
+float x; 	    32 bits 	-3.4x1038 to 3.4x1038
+double x; 	    64 bits 	-1.7x10308 to 1.7x10308
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+Random Numbers
+
+ Some programs need to use a random number. 
+ Ex: A game program may need to roll dice, or a website program may generate a random initial password.
+
+The Random class provides methods that return a random integer in the range -2^31 to 2^31 -1 or a programmer-defined range. 
+
+The statement import java.util.Random; enables use of the Random class. The statement Random randGen = new Random(); 
+creates a new random number generator object named randGen. The method call randGen.nextInt()

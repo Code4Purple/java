@@ -23,7 +23,7 @@ class Circle {
         Scanner scan = new Scanner(System.in);
 
         // Input
-        System.out.print("Enter the radius of a circle: ");
+        System.out.print("Enter the radius of a circle: "); // Input Test: 10.25
         radius = scan.nextDouble();
 
         // Processing
@@ -48,6 +48,22 @@ class Circle {
         System.out.printf("Area               : %.0f\n", area);
         System.out.printf("Area of Semicircle : %.0f\n", semiCircleArea);
 
-       
+       /* Test Output:
+        
+        Properties of a Circle
+        Radius             : 10.25
+        Diameter           : 20.5
+        Circumference      : 64.40075
+        Area               : 330.05384375
+        Area of Semicircle : 165.026921875
+
+        Properties "Rounded" Down
+        Radius             : 10
+        Diameter           : 20
+        Circumference      : 64
+        Area               : 330
+        Area of Semicircle : 165
+        
+        */
     }
 }
