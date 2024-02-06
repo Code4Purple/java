@@ -1,0 +1,22 @@
+-----------------------------------------------------------------------------------------------------------------
+                                            Chapter 6
+-----------------------------------------------------------------------------------------------------------------
+
+----------------------------
+            6.2
+----------------------------
+
+An if statement executes a group of statements if an expression is true. 
+Braces surround the if branch's statements. Braces { }, sometimes redundantly called curly braces, 
+represent a grouping, such as a grouping of statements. Note: { } are braces, [ ] are brackets.
+
+The example below uses ==. The equality operator (==) evaluates to true if the left and right sides are equal. 
+Ex: If numYears is 50, then numYears == 50 evaluates to true. Note the equality operator is ==, not =.
+
+Equality and inequality operators
+
+Whereas the equality operator checks whether two values are equal, the inequality operator (!=) 
+evaluates to true if the left and right sides are not equal, or different.
+
+An expression involving the equality or inequality operators evaluates to a Boolean value. 
+A Boolean is a type that has just two values: true or false.

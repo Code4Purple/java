@@ -65,6 +65,21 @@ public class math {
     System.out.println(str1);
     System.out.println(str2);
 
+    System.out.println("");
+    for (int musicianCount = 0; musicianCount < 5; musicianCount++){
+            if (musicianCount == 4){
+              System.out.println("Quartet");
+            }
+            else if (musicianCount == 2){
+              System.out.println("Duo");
+            }
+            else if (musicianCount == 1){
+              System.out.println("Solo");
+            }
+            else {
+              System.out.println("Other number of musicians");   
+            }
+    }
   }
 }
      
