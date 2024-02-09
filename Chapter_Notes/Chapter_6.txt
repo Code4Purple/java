@@ -20,3 +20,17 @@ evaluates to true if the left and right sides are not equal, or different.
 
 An expression involving the equality or inequality operators evaluates to a Boolean value. 
 A Boolean is a type that has just two values: true or false.
+
+
+
+--------------------------------
+            6.5
+--------------------------------
+    Logical operator 	            Description
+a AND b 	                Logical AND: true when both of its operands are true.
+a OR b 	                    Logical OR: true when at least one of its two operands are true.
+NOT a 	                    Logical NOT: true when its one operand is false, and vice-versa.
+
+AND -> &&
+OR  -> ||
+!A  -> !
