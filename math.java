@@ -80,6 +80,18 @@ public class math {
               System.out.println("Other number of musicians");   
             }
     }
+
+    int x;
+
+    x = 7;
+      
+    if ( !((x > 5) || (x < 3)) ) {
+       System.out.println("a");
+    }
+    if ( (x > 3) && (x < 10) ) {
+       System.out.println("b");
+    }
+    System.out.println("c");
   }
 }
      
