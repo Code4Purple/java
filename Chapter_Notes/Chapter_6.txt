@@ -34,3 +34,49 @@ NOT a 	                    Logical NOT: true when its one operand is false, and 
 AND -> &&
 OR  -> ||
 !A  -> !
+
+
+----------------------------------------
+            6.10
+----------------------------------------
+
+Operator/Convention 	                Description 	                                                                Explanation
+    ( ) 	                        Items within parentheses are evaluated first 	                                In (a * (b + c)) - d, the + is evaluated first, then *, then -.
+    ! 	                            ! (logical NOT) is next 	                                                    ! x || y is evaluated as (!x) || y
+    * / % + - 	                    Arithmetic operators (using their precedence rules; see earlier section) 	    z - 45 * y < 53 evaluates * first, then -, then <.
+    <   <=   >   >= 	            Relational operators                                                            x < 2 || x >= 10 is evaluated as (x < 2) || (x >= 10) because < and >= have precedence over ||.
+    ==   != 	                    Equality and inequality operators                                               x == 0 && x != 10 is evaluated as (x == 0) && (x != 10) because == and != have precedence over &&.
+                                                                                                                    == and != have the same precedence and are evaluated left to right.
+    && 	                            Logical AND 	                                                                x == 5 || y == 10 && z != 10 is evaluated as (x == 5) || ((y == 10) && (z != 10)) because && has precedence over ||.
+    || 	                            Logical OR 	                                                                    || has the lowest precedence of the listed arithmetic, logical, and relational operators. 
+
+
+---------------------------------------
+            6.11
+---------------------------------------
+
+Switch statement
+
+A switch statement can more clearly represent multi-branch behavior involving a variable being compared to constant values. 
+The program executes the first case whose constant expression matches the value of the switch expression, executes that case's statements, and then jumps to the end. 
+If no case matches, then the default case statements are executed.
+
+
+Omitting the break statement
+
+Omitting the break statement for a case will cause the statements within the next case to be executed. Such "falling through" to the next case can be useful when multiple cases, 
+such as cases 0, 1, and 2, should execute the same statements. 
+
+
+-------------------------------------------
+            6.13
+-------------------------------------------
+
+A programmer compares strings relationally using the notation str1.compareTo(str2). compareTo() returns values as follows.
+
+    Relation                    Returns 	                Expression to detect
+str1 less than str2 	      Negative number 	           str1.compareTo(str2) < 0
+str1 equal to str2 	                0 	                   str1.compareTo(str2) == 0
+str1 greater than str2 	      Positive number 	           str1.compareTo(str2) > 0
+
+A common error is to forget that case matters in a string comparison. A programmer can compare strings while ignoring case using str1.equalsIgnoreCase(str2) and str1.compareToIgnoreCase(str2). 

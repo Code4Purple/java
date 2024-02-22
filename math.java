@@ -92,6 +92,38 @@ public class math {
        System.out.println("b");
     }
     System.out.println("c");
+
+
+  
+
+    int carYear = 0;
+    int car = carYear;
+      if( car >= 1957){
+         System.out.println("Probably can carry several people.");
+      }
+      if (car <= 1961){
+         System.out.println("Probably only has a few safety features.");
+      }
+      if (car >= 1990){
+         System.out.println("Probably has traction control.");
+      }
+      
+      boolean isRed = false;
+      boolean isBalloon = true;
+      System.out.println("");
+
+      if(isBalloon && !isRed){
+         System.out.println("Balloon");
+      }
+      if(isBalloon && isRed){
+         System.out.println("Red balloon");         
+      }
+      else{
+         System.out.println("Not a balloon");   
+      }
+      
+
+
   }
 }
      
