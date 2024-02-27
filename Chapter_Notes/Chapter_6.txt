@@ -80,3 +80,158 @@ str1 equal to str2 	                0 	                   str1.compareTo(str2) =
 str1 greater than str2 	      Positive number 	           str1.compareTo(str2) > 0
 
 A common error is to forget that case matters in a string comparison. A programmer can compare strings while ignoring case using str1.equalsIgnoreCase(str2) and str1.compareToIgnoreCase(str2). 
+
+------------------------------------------------
+            6.15
+------------------------------------------------
+
+isLetter(c) 	
+
+true if alphabetic: a-z or A-Z 	
+
+isLetter('x') // true
+isLetter('6') // false
+isLetter('!') // false
+
+	  	toLowerCase(c) 	Lowercase version 	
+
+toLowerCase('A')  // a
+toLowerCase('a')  // a
+toLowerCase('3')  // 3
+
+	  	toUpperCase(c) 	Uppercase version 	
+
+toUpperCase('a')  // A
+toUpperCase('A')  // A
+toUpperCase('3')  // 3
+
+isDigit(c) 	true if digit: 0-9. 	
+
+isDigit('x') // false
+isDigit('6') // true
+
+isWhitespace(c) 	true if whitespace. 	
+
+isWhitespace(' ')  // true
+isWhitespace('\n') // true
+isWhitespace('x')  // false
+
+example(Character.isLetter)
+
+
+-------------------------------------------------------------
+            6.16.1
+-------------------------------------------------------------
+
+indexOf() 	
+
+indexOf(item) gets index of first item occurrence in a string, else -1. Item may be char, String variable, or string literal.
+
+indexOf(item, indx) starts at index indx.
+
+lastIndexOf(item) finds the last occurrence of the item in a string, else -1. 	
+
+// userText is "Help me!"
+userText.indexOf('p')     // Returns 3 
+userText.indexOf('e')     // Returns 1 (first occurrence) 
+userText.indexOf('z')     // Returns -1 
+userText.indexOf("me")    // Returns 5
+userText.indexOf('e', 2)  // Returns 6 (starts at index 2)
+userText.lastIndexOf('e') // Returns 6 (last occurrence)
+
+substring() 	
+
+substring(startIndex) returns substring starting at startIndex.
+
+substring(startIndex, endIndex) returns substring starting at startIndex and ending at endIndex - 1. The length of the substring is given by endIndex - startIndex. 	
+
+// userText is "http://google.com"
+userText.substring(7)      // Returns "google.com"
+userText.substring(13)     // Returns ".com"
+userText.substring(0, 7)   // Returns "http://"
+userText.substring(13, 17) // Returns ".com"
+
+// Returns last 4: ".com"
+userText.substring(userText.length() - 4, userText.length())
+
+
+example :  invoked as myString.indexOf().
+
+----------------------------------------------------
+
+concat : 
+
+concat(moreString) creates a new String that appends the String moreString at the end. 	
+
+// userText is "Hi"
+userText = userText.concat(" friend"); // Now "Hi friend" 
+newText = userText.concat(" there");   
+// newText is "Hi friend there"
+
+replace() : 
+
+replace(findStr, replaceStr) returns a new String in which all occurrences of findStr have been replaced with replaceStr.
+
+replace(findChar, replaceChar) returns a new String in which all occurrences of findChar have been replaced with replaceChar. 	
+
+// userText is "Hello"
+userText = userText.replace('H', 'j'); // Now "jello" 
+// userText is "You have many gifts"
+userText = userText.replace("many", "a plethora of"); 
+// Now "You have a plethora of gifts" 
+// userText is "Goodbye"
+newText = userText.replace("bye"," evening"); 
+// newText is "Good evening"
+
+str1 + str2: 	
+
+Returns a new String that is a copy of str1 with str2 appended.
+
+str1 may be a String variable or string literal. Likewise for str2. One of str1 or str2 (not both) may be a character. 	
+
+// userText is "A B"
+myString = userText + " C D";
+// myString is "A B C D"
+myString = myString + '!';
+// myString now "A B C D!"
+myString = myString + userText;
+// myString now "A B C D!A B"
+
+str1 += str2:
+
+Shorthand for str1 = str1 + str2.
+
+str1 must be a String variable, and str2 may be a String variable, a string literal, or a character. 	
+
+// userText is "My name is "
+userText += "Tom"; // Now "My na
+
+
+-------------------------------------------------------------
+                6.17
+--------------------------------------------------------------
+
+A conditional expression has the form condition ? exprWhenTrue : exprWhenFalse.
+
+All three operands are expressions. If the condition evaluates to true, then exprWhenTrue is evaluated. If the condition evaluates to false, then exprWhenFalse is evaluated. 
+The conditional expression evaluates to whichever of those two expressions was evaluated. For example, if x is 2, then the conditional expression (x == 2) ? 5 : 9 * x evaluates to 5.
+
+A conditional expression has three operands and thus the "?" and ":" together are sometimes referred to as a ternary operator.
+
+Good practice is to restrict usage of conditional expressions to an assignment statement, as in: y = (x == 2) ? 5 : 9 * x;. Common practice is to put parentheses around the first expression 
+of the conditional expression, to enhance readability.
+
+
+---------------------------------------------------------------
+                6.19
+---------------------------------------------------------------
+
+Short circuit evaluation skips evaluating later operands if the result of the logical operator can already be determined. 
+The logical AND operator short circuits to false if the first operand evaluates to false, and skips evaluating the second operand. 
+The logical OR operator short circuits to true if the first operand is true, and skips evaluating the second operand. 
+
+operand1 && operand2 	true && operand2 	If the first operand evaluates to true, operand2 is evaluated.
+                        false && operand2 	If the first operand evaluates to false, the result of the AND operation is always false, so operand2 is not evaluated.
+
+operand1 || operand2 	true || operand2 	If the first operand evaluates to true, the result of the OR operation is always true, so operand2 is not evaluated.
+                        false || operand2   If the first operand evaluates to false, operand2 is evaluated. 

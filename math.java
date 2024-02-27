@@ -122,9 +122,32 @@ public class math {
          System.out.println("Not a balloon");   
       }
       
+      String strInput1;
+		String strInput2;
+		int maxSize;
+      
+
+      strInput1 = scan.nextLine();
+		strInput2 = scan.nextLine();
+
+      maxSize = 0;
+      /* Your code goes here */
+      if (strInput1.length() < strInput2.length()){
+         maxSize = strInput2.length();
+      }
+      if (strInput1.length() > strInput2.length()){
+         maxSize = strInput1.length();
+      }
+      if (strInput1.length() == strInput2.length()){
+         maxSize = strInput2.length();
+      }
+
+		System.out.println(maxSize);
 
 
-  }
+
+   }
+
 }
      
 
