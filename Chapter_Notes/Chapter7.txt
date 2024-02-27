@@ -1,0 +1,24 @@
+
+-------------------------------------
+            7.1
+-------------------------------------
+
+Variables : are the nouns of a programming language.
+    Variables are things.
+
+Methods : are the verbs of a programming language.
+    Methods do things.
+
+A method call has 2 major parts, the method name, and the argument list.
+
+Arguments : in an argument list are always separated by commas. 
+    give methods what they need.
+    are evaluated to values before the method is called;
+    the values are passed to the method
+
+---------------------------------------------
+            7.4
+---------------------------------------------
+
+Math methods like ceil, random, and sqrt will each return a double when you call them
+Math.sqrt() , Math.random() , Math.ceil().
