@@ -24,8 +24,8 @@ public class tempStatus {
         System.out.println("Average : " + average);
         double range = max - min;
         double midPoint = max - (range / 2);
-        double skew = range % (midPoint - average);
-        System.out.println("Skew    : " + skew + "%");
+        double skew = (average - midPoint) / range * 100;
+        System.out.printf("Skew    : %.1f%%\n", skew);
         System.out.println("Range   : " + range);
 
     }     
