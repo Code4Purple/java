@@ -1,0 +1,29 @@
+------------------------------
+        CHapter 8.1
+------------------------------
+
+Loop basics
+
+A loop is a program construct that repeatedly executes the loop's statements (known as the loop body) while the loop's 
+expression is true; when the expression is false, execution proceeds past the loop. Each time through a loop's statements 
+is called an iteration
+
+---------------------------------
+        Chapter 8.2
+---------------------------------
+
+While loop: Basics
+
+A while loop is a program construct that repeatedly executes a list of sub-statements (known as the loop body) while the loop's 
+expression evaluates to true. Each execution of the loop body is called an iteration. Once entering the loop body, execution continues 
+to the body's end, even if the expression would become false midway through.
+
+
+Common errors
+
+A common error is to use the opposite loop expression than desired, like using x == 0 rather than x != 0. 
+Programmers should remember that the expression describes when the loop should iterate, not when the loop should terminate.
+
+An infinite loop is a loop that never stops iterating. A common error is to accidentally create an infinite loop, often by forgetting to 
+update a variable in the body, or by creating a loop expression whose evaluation to false isn't always reachable.
+
