@@ -1,3 +1,4 @@
+package playJava;
 import java.util.Scanner;
 
 

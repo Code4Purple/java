@@ -1,3 +1,4 @@
+package playJava;
 public class Main {
     private static void foo() {
         int x = 2;

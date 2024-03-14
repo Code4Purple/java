@@ -1,3 +1,4 @@
+package playJava;
 public class Driver {
     public static void main(String[] args) {
         foo(7);
