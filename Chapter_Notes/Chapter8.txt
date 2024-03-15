@@ -75,3 +75,50 @@ In-loop declaration of i
         Variables can be declared throughout code, so many programmers use: for (int i = 0; i < N; ++i). But, the teaching experience of this material's authors suggests such declarations may confuse learners who may declare variables within loops, repeatedly re-declaring variables, etc. This material avoids the in-loop declaration approach. The authors hope to make the learning less error-prone, and have confidence that programmers can easily pick up on the common in-loop declaration approach later.
 
 
+--------------------------------------------
+                8.7
+--------------------------------------------
+
+A nested loop is a loop that appears in the body of another loop. The nested loops are commonly referred to as the inner loop and outer loop.
+Nested loops have various uses. One use is to generate all combinations of some items. For example, the following program generates all two-letter .com Internet domain names.
+
+--------------------------------------------
+                8.10
+--------------------------------------------
+
+A continue statement in a loop causes an immediate jump to the loop condition check. 
+A continue statement can sometimes improve the readability of a loop.
+
+----------------------------------------------
+                8.11
+----------------------------------------------
+
+-----------------------------------------
+        Scope of names
+-----------------------------------------
+A declared name is only valid within a region of code known as the name's scope. 
+Ex: A variable userNum declared in main() is only valid within main(), from the declaration to main()'s end.
+
+Most of this material declares variables at the top of main() (and if the reader has studied methods, 
+at the top of other methods). However, a variable may be declared within other blocks too. 
+A block is a brace-enclosed {...} sequence of statements, such as found with an if-else, for loop, 
+or while loop. A variable name's scope extends from the declaration to the closing brace }.
+
+----------------------------------------------------
+                8.12
+----------------------------------------------------
+
+The program declares a new enumeration type named LightState. The program then declares a new variable lightVal of that type. The loop updates lightVal based on the user's input.
+
+The example illustrates the idea of a state machine that is sometimes used in programs, especially programs that interact with physical objects, wherein the program moves among particular situations ("states") depending on input; see What is: State machine.
+
+A programmer must include both the enumeration type and the enumerator within that type, as in lightVal = LightState.RED;. A common error is to omit the enumeration type in an expression. For example, the statement lightVal = RED; results in a compilation error.
+
+Different enumerated types may use some of the same enumerators. For example, the above program might also declare public enum Warnings {GREEN, ORANGE, RED}. The enumeration values are then accessed as Warnings.RED and LightState.RED.
+
+One might ask why the light variable wasn't simply declared as a string, and then compared with strings "GREEN", "RED", and "YELLOW". Enumerations are safer. If using a string, an assignment like light = "ORANGE" would not yield a compiler error, even though ORANGE is not a valid light color. Likewise, light == "YELOW" would not yield a compiler error, even though YELLOW is misspelled.
+
+One could instead declare final variables for strings like final String LS_GREEN = "GREEN"; or even integer values like final int LS_GREEN = 0; and then use those constants in the code, but an enumeration is clearer, requires less code, and is less prone to error.
+
+
+URL: https://www.techtarget.com/whatis/definition/finite-state-machine
