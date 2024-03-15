@@ -5,6 +5,7 @@ Needs to be Done by 3/18
 -----------------------------------------------------------------------------
 								In Progress
 7.2 Reading Activities
+	Current-Section / Last-Section @ 8.7 / 8.14
 7.3 Lab Participation
 7.4 Lab Challenge 
 7.5 Individual Assignment 
