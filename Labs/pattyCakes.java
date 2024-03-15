@@ -76,6 +76,7 @@ public class pattyCakes {
             System.out.println("Select cupcake #" + i + ": ");
             int selection = userInput.nextInt();
             if(selection > 0 && selection < 5){
+                i++;
                 switch (selection) {
                     case 1:
                         villinaSelected = true;
@@ -105,8 +106,39 @@ public class pattyCakes {
             else{
                 System.out.println(errorMsg);
             }
-            i++;
         }
+        // Receipt of the order
+        String receiptTitle = "Here are the cupcakes in your pack:";
+        String spaceing = "   - ";
+        double totalPrice;
+        double taxes = 0.08;
+        double salesTotal;
+        String thanksMsg = "Thank you for ordering from Patty's Cakes!";
 
+        System.out.println(receiptTitle);
+        for(int j = 1; j < cakes; j++){
+            if(villinaSelected){
+                System.out.println(spaceing + villina + " x" + villinaCount);
+                break;
+            }
+            else if(chocolateSelected){
+                System.out.println(receiptTitle);
+                System.out.println(spaceing + chocolate + " x" + chocolateCount);
+                break;
+            }
+            else if(strawberrySelected){
+                System.out.println(receiptTitle);
+                System.out.println(spaceing + strawberry + " x" + strawberryCount);
+                break;
+            }
+            else if(caramelSelected){
+                System.out.println(receiptTitle);
+                System.out.println(spaceing + caramel + " x" + caramelCount);
+                break;
+            }
+            else{
+                System.out.println(errorMsg);
+            }
+        }
     }
 }
