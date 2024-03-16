@@ -46,16 +46,16 @@ public class pattyCakes {
         for(int start = 1; start < 5; start++){
             switch(start){
                 case 1:
-                    System.out.println(start + ". " + villina + ": $" + villinaPrice);
+                    System.out.println(start + ". " + villina + ": $" + villinaPrice + "0");
                     break;
                 case 2:
-                    System.out.println(start + ". " + chocolate + ": $" + chocolatePrice);
+                    System.out.println(start + ". " + chocolate + ": $" + chocolatePrice + "0");
                     break;
                 case 3:
                     System.out.println(start + ". " + strawberry + ": $" + strawberryPrice);
                     break;
                 case 4:
-                    System.out.println(start + ". " + caramel + ": $" + caramelPrice);
+                    System.out.println(start + ". " + caramel + ": $" + caramelPrice + "0");
                     break;
                 default:
                     break;
@@ -72,8 +72,8 @@ public class pattyCakes {
         int chocolateCount = 0;
         int strawberryCount = 0;
         int caramelCount = 0;
-        while(i < cakes){
-            System.out.println("Select cupcake #" + i + ": ");
+        while(i <= cakes){
+            System.out.print("Select cupcake #" + i + ": ");
             int selection = userInput.nextInt();
             if(selection > 0 && selection < 5){
                 i++;
@@ -115,7 +115,7 @@ public class pattyCakes {
         double salesTotal;
         String thanksMsg = "Thank you for ordering from Patty's Cakes!";
 
-        System.out.println(receiptTitle);
+        System.out.println(receiptTitle + "\n");
         for(int j = 1; j < cakes; j++){
             if(villinaSelected){
                 System.out.println(spaceing + villina + " x" + villinaCount);
