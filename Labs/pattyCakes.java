@@ -137,7 +137,7 @@ public class pattyCakes {
         System.out.printf("\n%s     $%.2f\n", salesTotal, preTax);
         System.out.printf("%s    $%.2f\n", sales,preTax * salesTax);
         System.out.printf("%s           $%.2f\n\n",total, afterTax);
-        System.out.print(thanks);
+        System.out.println(thanks);
 
     }
 }
