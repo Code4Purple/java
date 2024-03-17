@@ -6,139 +6,138 @@ import java.util.Scanner;
 
 public class pattyCakes {
     public static void main(String[] args) {
-        // Input from user
-        Scanner userInput = new Scanner(System.in);
-        // Console messages
-        String welcomeMsg = "Welcome to Patty's Cakes!";
-        String howManyCakes = "How many cupcakes would you like, 4 or 6?";
-        String errorMsg = "Invalid selection, please try again.";
-        String startOrder = "Great! Let's start filling your ";
-        // variables for the processing
-        int cakes = 0;
-        // Console output for the 1st Section
-        System.out.println(welcomeMsg + "\n");
-        while (cakes != 6 || cakes != 4) {
-            System.out.print(howManyCakes + " ");
-            cakes = userInput.nextInt();
-            if (cakes == 6) {
-                System.out.println(startOrder + "6-pack.");
+        // Create a Scanner object
+        Scanner input = new Scanner(System.in);
+        // Strings to help outs 
+        String welcome = "Welcome to Patty's Cakes!\n";
+        String howMany= "How many cupcakes would you like, 4 or 6? ";
+        String errorSize = "Invalid selection, please try again.";
+        int howManyCakes = 0;
+        String passMsg = "Great! Let's start filling your %d-pack.";
+
+        // Package Size Section
+        System.out.println(welcome);
+        while(howManyCakes != 4 || howManyCakes != 6){
+            System.out.print(howMany);
+            howManyCakes = input.nextInt();
+            if(howManyCakes == 4 || howManyCakes == 6){
+                System.out.println(String.format(passMsg, howManyCakes));
                 break;
-            } else if (cakes == 4) {
-                System.out.println(startOrder + "4-pack.");
-                break;
-            } else {
-                System.out.println(errorMsg);
+            }
+            else{
+                System.out.println(errorSize);
             }
         }
-        
-        // Menu Setup and Items names
-        String menuTitle = "Cupcake Menu:";
-        String villina = "Vanilla Delight";
-        String chocolate = "Chocolate Dream";
-        String strawberry = "Strawberry Bliss";
-        String caramel = "Caramel Drizzle";
+
+        // Select your Type of Cakes
+        String menu = "\nCupcake Menu:\n";
+        String vanilla = "Vanilla Delight: ";
+        String chocolate = "Chocolate Dream:";
+        String strawberry = "Strawberry Bliss:";
+        String caramel = "Caramel Drizzle: ";
         // Prices
-        double villinaPrice = 2.50;
+        double vanillaPrice = 2.50;
         double chocolatePrice = 3.00;
         double strawberryPrice = 2.75;
         double caramelPrice = 3.50;
-        // Printing the menu
-        for(int start = 1; start < 5; start++){
-            switch(start){
+        // Console Output
+        for(int i = 0; i <= howManyCakes; i++){
+            switch (i) {
+                case 0:
+                    System.out.print(menu);
+                    i++;
                 case 1:
-                    System.out.println(start + ". " + villina + ": $" + villinaPrice);
-                    break;
+                    //System.out.printf(i + ". " + vanilla + "$.2f" + vanillaPrice);
+                    System.out.printf("%d. %s $%.2f\n", i, vanilla, vanillaPrice);
+                    i++;
                 case 2:
-                    System.out.println(start + ". " + chocolate + ": $" + chocolatePrice);
-                    break;
+                    //System.out.println(i + ". " + chocolate + "$.2f" + chocolatePrice);
+                    System.out.printf("%d. %s $%.2f\n", i, chocolate, chocolatePrice);
+                    i++;
                 case 3:
-                    System.out.println(start + ". " + strawberry + ": $" + strawberryPrice);
-                    break;
+                    //System.out.printf(i + ". " + strawbeery + "$.2f" + strawberryPrice); 
+                    System.out.printf("%d. %s $%.2f\n", i, strawberry, strawberryPrice);  
+                    i++;
                 case 4:
-                    System.out.println(start + ". " + caramel + ": $" + caramelPrice);
-                    break;
+                    //System.out.printf(i + ". " + caramel + "$.2f" + caramelPrice);    
+                    System.out.printf("%d. %s $%.2f\n", i, caramel, caramelPrice);
+                    i++;
                 default:
                     break;
+                    //System.out.println("ERROR : MENU NOT FOUND");                   
             }
         }
-        
-        // Getting the user's selection for the packs
-        int i = 1;
-        boolean villinaSelected = false;
-        boolean chocolateSelected = false;
-        boolean strawberrySelected = false;
-        boolean caramelSelected = false;
-        int villinaCount = 0;
-        int chocolateCount = 0;
-        int strawberryCount = 0;
-        int caramelCount = 0;
-        while(i < cakes){
-            System.out.println("Select cupcake #" + i + ": ");
-            int selection = userInput.nextInt();
-            if(selection > 0 && selection < 5){
-                i++;
-                switch (selection) {
-                    case 1:
-                        villinaSelected = true;
-                        villinaCount++;
-                        break;
-                    case 2:
-                        chocolateSelected = true;
-                        chocolateCount++;
-                        break;
-                    case 3: 
-                        strawberrySelected = true;
-                        strawberryCount++;
-                        break;
-                    case 4:
-                        caramelSelected = true;
-                        caramelCount++;
-                        break;
-                    
-                    default:
-                        villinaSelected = false;
-                        chocolateSelected = false;
-                        strawberrySelected = false;
-                        caramelSelected = false;
-                        break;
-                }
+        String selection ="";
+        String userPrompt = "Select cupcake #";
+        int caseNum = 0;
+        for(int i = 1; i <= howManyCakes; i++){
+            System.out.printf("%s%d: ", userPrompt, i );
+            caseNum = input.nextInt();
+            if(caseNum == 1){
+                selection += "1";
+            }
+            else if(caseNum == 2){
+                selection += "2";
+            }
+            else if(caseNum == 3){
+                selection += "3";
+            }
+            else if(caseNum == 4){
+                selection += "4";
             }
             else{
-                System.out.println(errorMsg);
+                System.out.println(errorSize);
+                i = i - 1;
             }
         }
-        // Receipt of the order
-        String receiptTitle = "Here are the cupcakes in your pack:";
-        String spaceing = "   - ";
-        double totalPrice;
-        double taxes = 0.08;
-        double salesTotal;
-        String thanksMsg = "Thank you for ordering from Patty's Cakes!";
 
-        System.out.println(receiptTitle);
-        for(int j = 1; j < cakes; j++){
-            if(villinaSelected){
-                System.out.println(spaceing + villina + " x" + villinaCount);
-                break;
+        // Receipt Section
+        String title = "\nHere are the cupcakes in your pack:";
+        double salesTax = 0.08;
+        double preTax = 0;
+        double afterTax = 0;
+
+        String thanks = "Thank you for ordering from Patty's Cakes!";
+        String spaceing = "   - ";
+        // Print out the receipt
+        int endIndex;
+        
+        System.out.println(title);
+        for(int i = 0; i < selection.length(); i++){
+        
+            if(selection.charAt(i) == '1'){
+                endIndex = vanilla.indexOf(":");
+                System.out.printf("%s%s\n", spaceing ,vanilla.substring(0, endIndex));
+                preTax += vanillaPrice;
+            }   
+            else if(selection.charAt(i) == '2'){
+                endIndex = chocolate.indexOf(":");
+                System.out.printf("%s%s\n", spaceing ,chocolate.substring(0, endIndex));
+                preTax += chocolatePrice;
             }
-            else if(chocolateSelected){
-                System.out.println(receiptTitle);
-                System.out.println(spaceing + chocolate + " x" + chocolateCount);
-                break;
+            else if(selection.charAt(i) == '3'){
+                endIndex = strawberry.indexOf(":");
+                System.out.printf("%s%s\n", spaceing ,strawberry.substring(0, endIndex));
+                preTax += strawberryPrice;
             }
-            else if(strawberrySelected){
-                System.out.println(receiptTitle);
-                System.out.println(spaceing + strawberry + " x" + strawberryCount);
-                break;
-            }
-            else if(caramelSelected){
-                System.out.println(receiptTitle);
-                System.out.println(spaceing + caramel + " x" + caramelCount);
-                break;
+            else if(selection.charAt(i) == '4'){
+                endIndex = caramel.indexOf(":");
+                System.out.printf("%s%s\n", spaceing ,caramel.substring(0, endIndex));
+                preTax += caramelPrice;
             }
             else{
-                System.out.println(errorMsg);
+                System.out.println("ERROR: PRINT ERROR");
             }
         }
+        String sales = "8% Sales Tax:";
+        String total = "Total:";
+        String salesTotal = "Sales Total:";
+        afterTax = (preTax * salesTax) + preTax;
+
+        System.out.printf("\n%s     $%.2f\n", salesTotal, preTax);
+        System.out.printf("%s    $%.2f\n", sales,preTax * salesTax);
+        System.out.printf("%s           $%.2f\n\n",total, afterTax);
+        System.out.print(thanks);
+
     }
 }
