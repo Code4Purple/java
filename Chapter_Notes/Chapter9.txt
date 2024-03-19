@@ -1,0 +1,69 @@
+
+--------------------------------------------------
+                    9.1
+--------------------------------------------------
+-------------------------
+    Methods (general)
+-------------------------
+
+A program may perform the same operation repeatedly, causing a large and confusing program due to redundancy. 
+Program redundancy can be reduced by creating a grouping of predefined statements for repeatedly used operations, 
+known as a method. Even without redundancy, methods can prevent a main program from becoming large and confusing.
+
+-------------------------
+    Basics of methods
+-------------------------
+
+A method is a named list of statements.
+    A method definition consists of the new method's name and a block of statements. Ex: public static double calcPizzaArea() { /* block of statements */ }
+    A method call is an invocation of a method's name, causing the method's statements to execute.
+
+The method's name can be any valid identifier. A block is a list of statements surrounded by braces.
+
+Below, the method call calcPizzaArea() causes execution to jump to the method's statements. Execution returns to the original location after executing 
+the method's last statement.
+
+Methods must be defined within a class. The line: public class PizzaArea {  begins a new class. \
+The class has two methods, calcPizzaArea() and main(). Both use the access modifiers public static. public indicates the method may 
+be called from any class in the program, and static indicates the method only uses values that are passed to the method; details of access modifiers are discussed elsewhere. 
+For now, just know that a method defined using public static can be called from the program's main() method
+
+--------------------------------------
+    Returning a value from a method
+--------------------------------------
+
+A method may return one value using a return statement. Below, the computeSquare() method is defined to have a return type of int; 
+thus, the method's return statement must have an expression that evaluates to an int.
+
+-----------------------------
+        Parameters
+-----------------------------
+
+A programmer can influence a method's behavior via an input.
+
+    A parameter is a method input specified in a method definition. Ex: A pizza area method might have diameter as an input.
+    
+    An argument is a value provided to a method's parameter during a method call. Ex: A pizza area method might be called as 
+    calcPizzaArea(12.0) or as calcPizzaArea(16.0).
+
+A parameter is like a variable declaration. Upon a call, the parameter's memory location is allocated, and the parameter is assigned with the argument's value. 
+Upon returning to the original call location, the parameter is deleted from memory.
+
+An argument may be an expression, like 12.0, x, or x * 1.5.
+
+--------------------------------------------
+        Multiple or no parameters
+--------------------------------------------
+
+A method definition may have multiple parameters, separated by commas. 
+Parameters are assigned with argument values by position: First parameter with first argument, second with second, etc.
+
+A method definition with no parameters must still have the parentheses, as in: int doSomething() { ... }. 
+The call must include parentheses, with no argument, as in: doSomething().
+
+-------------------------------------------
+        Calling methods from methods
+-------------------------------------------
+
+A method's statements may call other methods. In the example below, the pizzaCalories() method calls the calcCircleArea() method. 
+(Note that main() itself is the first method called when a program executes, and calls other methods.)
