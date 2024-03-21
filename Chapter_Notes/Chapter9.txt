@@ -69,3 +69,69 @@ A method's statements may call other methods. In the example below, the pizzaCal
 (Note that main() itself is the first method called when a program executes, and calls other methods.)
 
 
+-------------------------------------------
+                9.2
+-------------------------------------------
+
+---------------------------------
+    Printing from a method
+---------------------------------
+
+A common operation for a method is to print text. Large text outputs can clutter the main() method of a 
+program, especially if the text needs to be output multiple times. A method that only prints typically does 
+not return a value. The void keyword indicates a method does not return a value. A method with a void return 
+type is often called a void method. Once a void method finishes execution, control returns back to the caller 
+and no value is returned.
+
+---------------------------------------------------
+    Calling a print method multiple times
+---------------------------------------------------
+
+One benefit of a print method is that complex output statements can be written in code once. 
+Then the print method can be called multiple times to produce the output instead of rewriting complex 
+statements for every necessary instance. Changes to output and formatting are made easier and are less prone 
+to error.
+
+----------------------------------------------------
+                9.3
+----------------------------------------------------
+
+------------------------------------
+    Defining Simple Methods
+------------------------------------
+
+We have seen some examples of how to call methods previously, and we have taken a look at some of the many 
+methods already available to us in the Java standard library. Now we will learn how to define our own methods! 
+Defining a method is a way to specify how an operation or computation is to be done, and to name that operation 
+or computation.
+
+We will start with a simple method that takes no arguments and returns no value. 
+Such methods are useful for simple repetitive tasks. Say for example, that you would like to display a 
+little ACSII art bunny on the terminal window. You could write some code like this:
+
+System.out.println(" (\\(\\   ");
+System.out.println(" (-.-)    ");
+System.out.println(" O_(\")(\") ");
+
+When you run this code it will display a sequence of characters that looks kind of like a little bunny.
+
+Idea behind this method of thinking : If there is not already a method to do what we want, then we should define a method to do it.
+
+
+--------------------------------------------------------
+                9.4
+--------------------------------------------------------
+
+Arguments are the values passed to methods
+
+---------------------
+    example
+---------------------
+
+public static void sayHello(String firstName) {
+    System.out.println("Hello " + firstName + "!");
+}
+
+Parameters are the variables that receive and store the values passed to methods.
+
+Parameters Variables are assigned values in the order that the arguments are listed.
