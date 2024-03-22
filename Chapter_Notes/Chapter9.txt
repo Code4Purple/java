@@ -135,3 +135,43 @@ public static void sayHello(String firstName) {
 Parameters are the variables that receive and store the values passed to methods.
 
 Parameters Variables are assigned values in the order that the arguments are listed.
+
+
+----------------------------------------------------------
+                9.5
+-----------------------------------------------------------
+
+Modular and incremental program development
+
+Programmers commonly use methods to write programs modularly and incrementally.
+
+    Modular development is the process of dividing a program into separate modules that can be developed and tested separately and then integrated into a single program.
+    Incremental development is a process in which a programmer writes, compiles, and tests a small amount of code, then writes, compiles, and tests a small amount more (an incremental amount), and so on.
+    A method stub is a method definition whose statements have not yet been written.
+
+A programmer can use method stubs to capture the high-level behavior of main() and the required method (or modules) before diving into details of each method, like planning a route for a road trip before starting to drive. 
+A programmer can then incrementally develop and test each method independently.
+
+
+---------------------------------------------------------------
+                9.8
+---------------------------------------------------------------
+
+-------------------------------------------
+    What can we do with a method?
+-------------------------------------------
+
+There are really the only two things you can do with a method:
+    Define it
+    Call it
+
+The power of methods comes from how we use them. We use methods to simplify the design, construction, testing, and debugging of programs. 
+This simplification is possible because methods allow us to:
+    Name operations (the things a program does)
+    Break a complex algorithm down into simple pieces of functionality
+    Build complex programs out of simple pieces
+
+We want to use methods:
+    When similar code appears more than once in a program
+    When a sequence of instructions is long or overly complex
+
