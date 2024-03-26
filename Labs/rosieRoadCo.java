@@ -12,10 +12,20 @@ public class RosieRoadCo {
         /*int numberOfStopLights = numberOfStoplights(1.0,  1);
         System.out.println(numberOfStopLights); */
 
-        System.out.println(truckloadsOfAsphalt(1.0, 1, 12));     //should return the value 951
+        /*System.out.println(truckloadsOfAsphalt(1.0, 1, 12));     //should return the value 951
         System.out.println(truckloadsOfAsphalt(1.0, 2, 12));     //should return the value 1901
         System.out.println(truckloadsOfAsphalt(2.0, 1, 24));     //should return the value 3802
-        System.out.println(truckloadsOfAsphalt(2.75, 3, 10));    //should return the value 6534
+        System.out.println(truckloadsOfAsphalt(2.75, 3, 10));    //should return the value 6534 */
+
+        /*System.out.println(numberOfPowerPipes(1.0));   // should return the value 264
+        System.out.println(numberOfPowerPipes(1.5));  // should return the value 396
+        System.out.println(numberOfPowerPipes(2.0));  // should return the value 528
+        System.out.println(numberOfPowerPipes(2.75)); // should return the value 726*/
+
+        /*System.out.println(numberOfWaterPipes(1.0)); //should return the value 352
+        System.out.println(numberOfWaterPipes(1.5)); //should return the value 528
+        System.out.println(numberOfWaterPipes(2.0)); //should return the value 704
+        System.out.println(numberOfWaterPipes(2.75)); //should return the value 968 */
         
     }
 
@@ -25,15 +35,26 @@ public class RosieRoadCo {
         return stopLights;
     }
     public static int truckloadsOfAsphalt(double miles, int lanes, int inches){
-        double roadLength = miles * 5280;
-        double roadWidth = lanes * 12;
-        double roadDepth = inches / 12.0;
+        double roadLength = miles * 5280; // Mile to feet
+        double roadWidth = lanes * 12; // CONVERT LANES TO FEET
+        double roadDepth = inches / 12.0; // CONVERT INCHES TO FEET
         double cubicFeet = roadLength * roadWidth * roadDepth;
-        //System.out.printf("Length = %.2f, Width = %.2f, Depth = %.2f, Cubic Feet = %.2f\n", roadLength, roadWidth, roadDepth, cubicFeet);
+        //System.out.printf("Length = %.2f, Width = %.2f, Depth = %.2f, Cubic Feet = %.2f\n", roadLength, roadWidth, roadDepth, cubicFeet); // Debugging
         double asphaltPounds = cubicFeet * 150; //  asphalt weighs 150 pounds per cubic foot
         int approximateTruckLoads = (int)Math.ceil(asphaltPounds / 10000); // 1 truckload = 10,000 pounds
         return approximateTruckLoads;
     }
+
+    public static int numberOfPowerPipes(double miles){
+       double feet = miles * 5280;
+       int approximatePowerPipes =  (int)Math.ceil(feet / 20);
+       return approximatePowerPipes;
+    }
+    public static int numberOfWaterPipes(double miles){
+       double feet = miles * 5280;
+       int approximateWaterPipes =  (int)Math.ceil(feet / 15);
+       return approximateWaterPipes;
+    }
 }
 
-// Lab P @ 18:00 mins
+
