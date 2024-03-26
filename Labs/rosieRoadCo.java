@@ -1,8 +1,42 @@
 package Labs;
 
+import java.util.Scanner;
+
 public class RosieRoadCo {
     public static void main(String[] args) {
-        
+        // inputs
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter Road Project Length in Miles : ");
+        double miles =2.75; //scan.nextDouble();
+        System.out.print("Enter Number of Lanes              : ");
+        int lanes = 3;//scan.nextInt();
+        System.out.print("Enter Depth of Asphalt in Inches   : ");
+        int inches = 12;//scan.nextInt();
+        System.out.print("Enter Days to Complete Project     : ");
+        int days = 30; //scan.nextInt();
+
+        // outputs
+        String title_AMN = "== Amount of Materials Needed ===";
+        String title_Cost = "=== Cost of Materials ============";
+        String title_TotalCost = "=== Total Cost of Project ========";
+
+        System.out.printf("%s\n",title_AMN);
+        System.out.printf("Truckloads of Asphalt : %d\n", truckloadsOfAsphalt(miles, lanes, inches));
+        System.out.printf("Stoplights            : %d\n", numberOfStoplights(miles, lanes));
+        System.out.printf("Water Pipes           : %d\n", numberOfWaterPipes(miles));
+        System.out.printf("Power Pipes           : %d\n", numberOfPowerPipes(miles));
+        System.out.printf("Crew members needed   : %d\n", numberOfCrewMembers(miles, lanes, days));
+        System.out.printf("%s\n",title_Cost);
+        System.out.printf("Cost of Asphalt        : $%.2f\n", );
+        System.out.printf("Cost of Stoplights     : $%.2f\n", numberOfStoplights(miles, lanes) * 32000.0);
+        System.out.printf("Cost of Water Pipes    : $%.2f\n", numberOfWaterPipes(miles) * 280.0);
+        System.out.printf("Cost of Power Pipes    : $%.2f\n", numberOfPowerPipes(miles) * 350.0);
+        System.out.printf("Cost of Crew members   : $%.2f\n", numberOfCrewMembers(miles, lanes, days) * (days * 8 * 24.0));
+        System.out.printf("%s\n",title_TotalCost);
+        double totalCost = truckloadsOfAsphalt(miles, lanes, inches) * 250 + numberOfStoplights(miles, lanes) * 32000 + numberOfWaterPipes(miles) * 280 + numberOfPowerPipes(miles) * 350 + numberOfCrewMembers(miles, lanes, days) * 24 * days;
+        System.out.printf("Total Cost of Project  : $%.2f\n", totalCost);
+
+
     }
 
     public static int numberOfStoplights(double miles, int lanes){
@@ -35,6 +69,7 @@ public class RosieRoadCo {
         double crew = (50 * miles * lanes) / days;
         return (int)Math.ceil(crew);
     }
+    
 }
 
 
