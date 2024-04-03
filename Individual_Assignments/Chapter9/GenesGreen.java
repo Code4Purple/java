@@ -26,9 +26,13 @@ public class GenesGreen {
         System.out.println(areaOfPuttingGreen(8.0)); // should return the approximate value 22.34
         System.out.println(areaOfPuttingGreen(7.5)); // should return the approximate value 19.63 */
 
-        System.out.println(areaOfSandTrap(3.0)); // should return the approximate value 0.44
+        /* System.out.println(areaOfSandTrap(3.0)); // should return the approximate value 0.44
         System.out.println(areaOfSandTrap(8.0)); // should return the approximate value 3.14
-        System.out.println(areaOfSandTrap(7.5)); // should return the approximate value 2.76
+        System.out.println(areaOfSandTrap(7.5)); // should return the approximate value 2.76 */
+
+        System.out.println(numberOfBushes(10.0, 20.0)); // should return the value 58
+        System.out.println(numberOfBushes(10.5, 5.25)); // should return the value 29
+        System.out.println(numberOfBushes(20.0, 10.0)); // should return the value 58
 
     }
 
@@ -68,5 +72,11 @@ public class GenesGreen {
     public static double areaOfSandTrap(double radius){
         double area = areaOfCircle(radius * (1/4.0));
         return area;
+    }
+
+    public static int numberOfBushes(double length, double width){
+        double perimeterOfRectangle = perimeterOfRectangle(length, width);
+        int numberOfBushes = (int) (perimeterOfRectangle - 2);
+        return numberOfBushes;
     }
 }
