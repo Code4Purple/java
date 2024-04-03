@@ -7,13 +7,13 @@ public class RosieRoadCo {
         // inputs
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter Road Project Length in Miles : ");
-        double miles =2.75; //scan.nextDouble();
+        double miles = scan.nextDouble();
         System.out.print("Enter Number of Lanes              : ");
-        int lanes = 3;//scan.nextInt();
+        int lanes = scan.nextInt();
         System.out.print("Enter Depth of Asphalt in Inches   : ");
-        int inches = 12;//scan.nextInt();
+        int inches = scan.nextInt();
         System.out.print("Enter Days to Complete Project     : ");
-        int days = 30; //scan.nextInt();
+        int days = scan.nextInt();
 
         // outputs
         String title_AMN = "== Amount of Materials Needed ===";
@@ -27,13 +27,19 @@ public class RosieRoadCo {
         System.out.printf("Power Pipes           : %d\n", numberOfPowerPipes(miles));
         System.out.printf("Crew members needed   : %d\n", numberOfCrewMembers(miles, lanes, days));
         System.out.printf("%s\n",title_Cost);
-        System.out.printf("Cost of Asphalt        : $%.2f\n", );
+        System.out.printf("Cost of Asphalt        : $%.2f\n", truckloadsOfAsphalt(miles, lanes, inches) * (250.0 * 5));
         System.out.printf("Cost of Stoplights     : $%.2f\n", numberOfStoplights(miles, lanes) * 32000.0);
         System.out.printf("Cost of Water Pipes    : $%.2f\n", numberOfWaterPipes(miles) * 280.0);
         System.out.printf("Cost of Power Pipes    : $%.2f\n", numberOfPowerPipes(miles) * 350.0);
-        System.out.printf("Cost of Crew members   : $%.2f\n", numberOfCrewMembers(miles, lanes, days) * (days * 8 * 24.0));
+        System.out.printf("Cost of Labor          : $%.2f\n", numberOfCrewMembers(miles, lanes, days) * (days * 8 * 24.0));
         System.out.printf("%s\n",title_TotalCost);
-        double totalCost = truckloadsOfAsphalt(miles, lanes, inches) * 250 + numberOfStoplights(miles, lanes) * 32000 + numberOfWaterPipes(miles) * 280 + numberOfPowerPipes(miles) * 350 + numberOfCrewMembers(miles, lanes, days) * 24 * days;
+        double totalCost = 0;
+        // Total Cost of Project
+        totalCost += truckloadsOfAsphalt(miles, lanes, inches) * (250.0 * 5);
+        totalCost += numberOfStoplights(miles, lanes) * 32000.0;
+        totalCost += numberOfWaterPipes(miles) * 280.0;
+        totalCost += numberOfPowerPipes(miles) * 350.0;
+        totalCost += numberOfCrewMembers(miles, lanes, days) * (days * 8 * 24.0);
         System.out.printf("Total Cost of Project  : $%.2f\n", totalCost);
 
 
@@ -103,3 +109,24 @@ System.out.println(numberOfWaterPipes(2.75)); //should return the value 968 */
 //System.out.println(numberOfCrewMembers(2.0, 1, 20)); // should return the value 5
 //System.out.println(numberOfCrewMembers(2.75, 3, 10)); // should return the value 42
 
+/* 
+ * Enter Road Project Length in Miles : 2.75
+Enter Number of Lanes              : 3
+Enter Depth of Asphalt in Inches   : 12
+Enter Days to Complete Project     : 30
+
+== Amount of Materials Needed ===
+Truckloads of Asphalt : 7841
+Stoplights            : 10
+Water pipes           : 968
+Power pipes           : 726
+Crew members needed   : 14
+=== Cost of Materials ============
+Cost of Asphalt       : $9801250.00
+Cost of Stoplights    : $320000.00
+Cost of Water pipes   : $271040.00
+Cost of Power pipes   : $254100.00
+Cost of Labor         : $80640.00
+=== Total Cost of Project ========
+Total cost of project : $10727030.00    
+ */
