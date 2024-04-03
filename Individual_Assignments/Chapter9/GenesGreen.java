@@ -22,9 +22,13 @@ public class GenesGreen {
         System.out.println(areaOfTee(8.0)); // should return the approximate value 5.59
         System.out.println(areaOfTee(7.5)); // should return the approximate value 4.91 */
 
-        System.out.println(areaOfPuttingGreen(3.0)); // should return the approximate value 3.14
+        /* System.out.println(areaOfPuttingGreen(3.0)); // should return the approximate value 3.14
         System.out.println(areaOfPuttingGreen(8.0)); // should return the approximate value 22.34
-        System.out.println(areaOfPuttingGreen(7.5)); // should return the approximate value 19.63
+        System.out.println(areaOfPuttingGreen(7.5)); // should return the approximate value 19.63 */
+
+        System.out.println(areaOfSandTrap(3.0)); // should return the approximate value 0.44
+        System.out.println(areaOfSandTrap(8.0)); // should return the approximate value 3.14
+        System.out.println(areaOfSandTrap(7.5)); // should return the approximate value 2.76
 
     }
 
@@ -58,6 +62,11 @@ public class GenesGreen {
     public static double areaOfPuttingGreen(double radius){
         double area = areaOfCircle(radius * (2/3.0));
         //System.out.printf("%.2f - %.2f = " , area, area2 );
+        return area;
+    }
+
+    public static double areaOfSandTrap(double radius){
+        double area = areaOfCircle(radius * (1/4.0));
         return area;
     }
 }
