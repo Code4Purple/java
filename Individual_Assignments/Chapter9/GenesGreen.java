@@ -1,5 +1,6 @@
 package Individual_Assignments.Chapter9;
 
+import java.util.Scanner;
 public class GenesGreen {
     public static void main(String[] args) {
         /* System.out.println(areaOfRectangle(3.0, 5.0)); // should return the value 15.0
@@ -30,9 +31,16 @@ public class GenesGreen {
         System.out.println(areaOfSandTrap(8.0)); // should return the approximate value 3.14
         System.out.println(areaOfSandTrap(7.5)); // should return the approximate value 2.76 */
 
-        System.out.println(numberOfBushes(10.0, 20.0)); // should return the value 58
+        /* System.out.println(numberOfBushes(10.0, 20.0)); // should return the value 58
         System.out.println(numberOfBushes(10.5, 5.25)); // should return the value 29
-        System.out.println(numberOfBushes(20.0, 10.0)); // should return the value 58
+        System.out.println(numberOfBushes(20.0, 10.0)); // should return the value 58 */
+
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter Course Length : ");
+        int length = scan.nextInt();
+        System.out.print("Enter Course Width  : ");
+        int width = scan.nextInt();
+        volumeOfSod(length, width);
 
     }
 
@@ -78,5 +86,33 @@ public class GenesGreen {
         double perimeterOfRectangle = perimeterOfRectangle(length, width);
         int numberOfBushes = (int) (perimeterOfRectangle - 2);
         return numberOfBushes;
+    }
+
+    public static void volumeOfSod(double length, double width){
+        String roughSod =    "Total square yards of rough sod  :";
+        double totalRS = length * width;
+        totalRS -= areaOfTee(width);
+        totalRS -= areaOfPuttingGreen(width);
+        totalRS -= areaOfSandTrap(width);
+        totalRS = Math.ceil(totalRS);
+        
+        String smoothSod =   "Total square yards of smooth sod :";
+        double totalSS = Math.ceil(areaOfTee(width) + areaOfPuttingGreen(width));
+        
+        String tonsOfSand =  "Tons of sand                     :";
+        double totalSand = areaOfSandTrap(totalSS) + areaOfSandTrap(totalRS);
+        totalSand *= 9;
+        totalSand /= 80;
+        totalSand /= 2000;
+        //totalSand = Math.ceil(totalSand);
+
+        String numOfBushes = "Number of bushes                 :";
+        double bushes = numberOfBushes(length, width);
+
+        System.out.printf("\n%s %.0f\n", roughSod, totalRS);
+        System.out.printf("%s %.0f\n", smoothSod, totalSS);
+        System.out.printf("%s %.2f\n", tonsOfSand, totalSand);
+        System.out.printf("%s %.0f\n", numOfBushes, bushes);
+
     }
 }
