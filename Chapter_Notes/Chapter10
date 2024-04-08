@@ -1,0 +1,47 @@
+---------------------------------
+            10.1
+---------------------------------
+
+An array is an ordered collection of variables (called elements). 
+Each variable in the array (each element) has the same data type and the same name. 
+Individual elements (variables) of the array are accessed by an integer index number, 
+indicating their position in the array - relative to the first array element which is 
+at index 0.
+
+To summarize, an array is a
+
+    set of variables (elements)
+    with same name
+    and same data type
+    all located contiguously in memory (providing very fast access)
+    each element is accessed by an integer index
+
+Arrays allow us to create a specified number of variables (all of the same data type) 
+with a single declaration and initialization statement.
+
+Each element in an array is a variable.
+
+
+-------------------------------------
+            10.2
+-------------------------------------
+
+When we create (instantiate) an array object, we must specify the data type and the number of elements that we want. 
+The standard way to instantiate (create) an array object has these 4 parts: new <dataType>[<arraySize>]
+  	  	 
+1 - 	new 	- keyword telling Java that you want to create a new object in memory
+2 - 	<dataType> 	- the data type of the elements
+3 - 	[ ] 	- square brackets
+4 - 	<arraySize> 	- the number of elements you want
+  		
+
+Here is an example instantiating an array of 5 int variables.
+
+new int[5]
+
+And here is an example that declares and creates an array of 5 int variables named sample.
+
+int[] samples = new int[5];
+
+example : dataType[] arrayName = new dataType[numElements];
+
