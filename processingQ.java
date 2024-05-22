@@ -1,22 +1,13 @@
 import java.util.Scanner;
-
 public class processingQ {
     public static void main(String[] args) {
-        Scanner scnr = new Scanner(System.in);
-        int biologyGrade;
-		int englishGrade;
-		int mathGrade;
-        int numGrades;
-        double avgGrade;
+      String name1;
+      String name2;
 
-        biologyGrade = scnr.nextInt();
-		englishGrade = scnr.nextInt();
-		mathGrade = scnr.nextInt();
-        numGrades = scnr.nextInt();
-   
-        //numGrades *=1.0;
-        avgGrade = ((mathGrade + englishGrade + biologyGrade) / (double)(numGrades));
+      name1 = "Layla";
+      name2 = "Lucy";
 
-        System.out.println(avgGrade);
+      System.out.printf("%-8s|\n", name1);
+      System.out.printf("%-8s|\n", name2);
     }
 }
