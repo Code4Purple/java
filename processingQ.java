@@ -9,5 +9,9 @@ public class processingQ {
 
       System.out.printf("%-8s|\n", name1);
       System.out.printf("%-8s|\n", name2);
+
+      double value = 46.0;
+      String scientificNotation = String.format("%e", value);
+      System.out.println(scientificNotation + "%");
     }
 }
