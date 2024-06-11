@@ -1,13 +1,22 @@
 import java.util.Scanner;
 public class processingQ {
     public static void main(String[] args) {
-      int myNumber;
-      int yourNumber;
-      
-      myNumber = 7;
-      yourNumber = (myNumber == 7) ? 7 : 0;
+      Scanner scnr = new Scanner(System.in);
+      int userAge;
 
-      System.out.println(yourNumber);
+      userAge = scnr.nextInt();
+
+      while (userAge < 16 || userAge > 70) {
+         if (userAge < 16) {
+            System.out.println("5% discount");
+         }
+         else {
+            System.out.println("15% discount");
+         }
+         userAge = scnr.nextInt();
+      }
+
+      System.out.print("No discount");
         
     }
 }
