@@ -1,5 +1,5 @@
 ----------------------------------------------
-       Bill(s)  	     |   Amount(s)   
+       Bill(s)  	     |      Amount(s)   
 ----------------------------------------------
        Planet-Fitness             $23.06      
        Ring                       $4.99      
@@ -11,9 +11,9 @@
        Sallie-Mae-Bank            $414.67      
        The-Daily-Wire             $16.41      
        Hulu                       $26.26    
-       Rent			  $800
+       Rent			      $800
        Car-Payment                $250  
-       Prime			  $16.41
-       GitHub AI		  $10.00
+       Prime			      $16.41
+       GitHub AI		      $10.00
 ----------------------------------------------
 		    Total         $2085.41   
