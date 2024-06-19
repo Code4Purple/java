@@ -104,7 +104,8 @@ public class GenesGreen {
         totalSand *= 9;
         totalSand /= 80;
         totalSand /= 2000;
-        //totalSand = Math.ceil(totalSand);
+        totalSand *= totalSS;
+        totalSand = Math.ceil(totalSand);
 
         String numOfBushes = "Number of bushes                 :";
         double bushes = numberOfBushes(length, width);

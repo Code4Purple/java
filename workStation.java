@@ -1,27 +1,37 @@
+import java.util.Scanner; // import the Scanner class
+import java.util.ArrayList; // import the ArrayList class
+
 public class workStation {
-   public static int calculateCost(int age, int units) {
-      int cost;
-      if (age >= 15 && age < 28) {
-         if (units > 17) {
-            cost = (units - 17) * 100; 
-         }
-         else {
-            cost = 0;
+      public static void printSelectedNumbers(int numCount, int number) {
+            //Scanner scnr = new Scanner(System.in);
+            int i;
+         
+            for (i = 0; i < numCount; ++i) {
+               if (number >= 9) {
+                  System.out.println(number);
+               }
+            }
+          }
+          
+         public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+            ArrayList<Integer> numbers = new ArrayList<Integer>();
+
+            int numCount = 5;
+            
+            for (int i = 0; i < numCount; i++) {
+               System.out.print("Enter a number: ");
+               int number = input.nextInt();
+               numbers.add(number);
+            }
+            
+            for (int i = 0; i < numbers.size(); i++) {
+               printSelectedNumbers(numCount, numbers.get(i));
+            }
+
+
+            
+
          }
       }
-      else {
-         if (units < 14) {
-            cost = units * 100;
-         }
-         else {
-            cost = (units - 13) * 500 + 400;
-         }
-      }
-      return cost;
-   }
-    
-   public static void main(String[] args) {
-      int costReturned = calculateCost(16, 3);
-      System.out.println(costReturned);
-   }
-}
+   
