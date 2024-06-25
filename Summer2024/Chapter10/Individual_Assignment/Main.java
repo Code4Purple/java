@@ -31,6 +31,9 @@ public class Main {
         // Test for getInRange
         System.out.print("The elements in the range 100 to 1000 are: ");
         printArray(getInRange(myArray, 100, 1000), space);
+
+        // Test for isSorted
+        System.out.println("The array is sorted: " + isSorted(myArray));
     }
 
     public static void printArray(int[] Array, String space){
@@ -114,5 +117,20 @@ public class Main {
             }
         }
         return newArray;
+    }
+
+    public static boolean isSorted(int[] Array){
+        boolean sorted = false;
+        // Check if the array is sorted in ascending order
+        for(int i = 0; i < Array.length - 1; i++){
+            if(Array[i] > Array[i + 1]){
+                sorted = false;
+                break;
+            }
+            else {
+                sorted = true;
+            }
+        }
+        return sorted;
     }
 }
