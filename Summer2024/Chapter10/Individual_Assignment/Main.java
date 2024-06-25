@@ -23,6 +23,10 @@ public class Main {
 
         // Test For getIndexOfMax
         System.out.println("The index of the maximum value is " + getIndexOfMax(myArray2));
+
+        // Test for getAllButLast
+        System.out.print("All but the last element: ");
+        printArray(getAllButLast(myArray), space);
     }
 
     public static void printArray(int[] Array, String space){
@@ -80,5 +84,13 @@ public class Main {
             }
         }
         return index;
+    }
+
+    public static int[] getAllButLast(int[] myArray){
+        int[] newArray = new int[myArray.length - 1];
+        for(int i = 0; i < myArray.length - 1; i++){
+            newArray[i] = myArray[i];
+        }
+        return newArray;
     }
 }
