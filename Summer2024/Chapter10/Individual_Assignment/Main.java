@@ -27,6 +27,10 @@ public class Main {
         // Test for getAllButLast
         System.out.print("All but the last element: ");
         printArray(getAllButLast(myArray), space);
+
+        // Test for getInRange
+        System.out.print("The elements in the range 100 to 1000 are: ");
+        printArray(getInRange(myArray, 100, 1000), space);
     }
 
     public static void printArray(int[] Array, String space){
@@ -90,6 +94,24 @@ public class Main {
         int[] newArray = new int[myArray.length - 1];
         for(int i = 0; i < myArray.length - 1; i++){
             newArray[i] = myArray[i];
+        }
+        return newArray;
+    }
+
+    public static int[] getInRange(int[] Array, int low, int high){
+        int count = 0;
+        for(int i = 0; i < Array.length; i++){
+            if(Array[i] >= low && Array[i] <= high){
+                count++;
+            }
+        }
+        int[] newArray = new int[count];
+        int index = 0;
+        for(int i = 0; i < Array.length; i++){
+            if(Array[i] >= low && Array[i] <= high){
+                newArray[index] = Array[i];
+                index++;
+            }
         }
         return newArray;
     }
