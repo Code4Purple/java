@@ -1,0 +1,48 @@
+What are Reference Types?
+
+
+---------------------------------------------------
+		Definitions 
+---------------------------------------------------
+
+Non-primitive types : are reference types in Java.
+
+--------------------------------------------------
+	Value Types vs. Reference Types
+--------------------------------------------------
+This is very different behavior from a value type variable. 
+A value type variable will always store a value of that type. 
+For example a variable of type int will always store an int value 
+- the value may be positive, negative, or zero, but there will be 
+an int value stored in an int variable at all times. On the other hand, 
+a reference type variable can store a reference to an object of the 
+variable's type, but it can also store a null reference. So, a reference 
+type variable is either null (referring to no object at this time), or 
+it is referring to an object of the variable's type. So, while a value type 
+variable can never be empty, a reference type variable can be null (which is essentially empty).
+
+
+
+Reference Type Variables : either store an object reference or Store a null reference.
+
+----------------------------------------------------------------------------------------
+	Null Reference vs. Object Reference
+----------------------------------------------------------------------------------------
+
+If we declare a variable named input of type Scanner, then that input variable will either store an object reference or a null 
+reference. The declared variable will store a null reference (by default initialization), if we do not explicitly initialize the 
+variable to an object reference. While an object reference is a reference to some actual object in memory, the null reference 
+is a reference to nothing.
+
+Scanner input; // Scanner variable storing a default null reference 
+
+We can also use the Java keyword null to explicitly store a null reference in a reference type variable. 
+The keyword null is the Java literal for a null reference.
+
+Scanner input = null; // Scanner variable storing a null reference
+
+When we assign a value to a reference variable (like this input variable) we will be replacing the reference that it currently 
+stores with a new reference. Below, we are instantiating a new Scanner object and storing a reference to this new object in our 
+input variable.
+
+input = new Scanner(System.in); // replace null ref. With object ref.
