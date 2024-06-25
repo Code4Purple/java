@@ -20,6 +20,9 @@ public class Main {
         // Test For getIndexOfMin
         int[] myArray2 = {333, 22, 1,  400, 5005, 9};
         System.out.println("The index of the minimum value is " + getIndexOfMin(myArray2));
+
+        // Test For getIndexOfMax
+        System.out.println("The index of the maximum value is " + getIndexOfMax(myArray2));
     }
 
     public static void printArray(int[] Array, String space){
@@ -61,6 +64,18 @@ public class Main {
         for(int i = 1; i < Array.length; i++){
             if(Array[i] < min){
                 min = Array[i];
+                index = i;
+            }
+        }
+        return index;
+    }
+
+    public static int getIndexOfMax(int[] Array){
+        int max = Array[0];
+        int index = 0;
+        for(int i = 1; i < Array.length; i++){
+            if(Array[i] > max){
+                max = Array[i];
                 index = i;
             }
         }
