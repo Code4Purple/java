@@ -2,11 +2,13 @@ package Chapter10.Individual_Assignment;
 
 public class printArray {
     public static void main(String[] args) {
-        String space = ", ";
         int[] myArray = {1, 22, 333, 400, 5005, 9};
+        
+        // Test For printArray
+        String space = ", ";
         printArray(myArray, space);
         space = " - ";
-        printArray(myArray, space);
+        printArray(myArray, space); 
     }
 
     public static void printArray(int[] Array, String space){
@@ -20,5 +22,15 @@ public class printArray {
             }
         }
         System.out.println();
+    }
+
+    public static int countGreaterThan(int[] Array, int compareValue){
+        int count = 0;
+        for(int i = 0; i < Array.length; i++){
+            if(Array[i] > compareValue){
+                count++;
+            }
+        }
+        return count;
     }
 }
