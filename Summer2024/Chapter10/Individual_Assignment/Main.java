@@ -34,6 +34,10 @@ public class Main {
 
         // Test for isSorted
         System.out.println("The array is sorted: " + isSorted(myArray));
+
+        // Tets for getAllLessThan
+        System.out.print("All elements less than 300: ");
+        printArray(getAllLessThan(myArray, 300), space);
     }
 
     public static void printArray(int[] Array, String space){
@@ -132,5 +136,23 @@ public class Main {
             }
         }
         return sorted;
+    }
+
+    public static int[] getAllLessThan(int[] Array, int compareValue){
+        int count = 0;
+        for(int i = 0; i < Array.length; i++){
+            if(Array[i] < compareValue){
+                count++;
+            }
+        }
+        int[] newArray = new int[count];
+        int index = 0;
+        for(int i = 0; i < Array.length; i++){
+            if(Array[i] < compareValue){
+                newArray[index] = Array[i];
+                index++;
+            }
+        }
+        return newArray;
     }
 }
