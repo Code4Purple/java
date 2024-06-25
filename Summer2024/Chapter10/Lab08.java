@@ -21,8 +21,8 @@ public class Lab08 {
         System.out.print("\nAll elements greater than 200: ");
         int printArray2[] = getAllGreaterThan(myArray, 200);
         for(int i = 0; i < printArray2.length; i++){
-            System.out.print(printArray2[i] + " ");
-        }
+            System.out.print(printArray2[i] + " "); 
+        } 
      }
      
     public static int getFirst(int [] numbers) {
@@ -53,12 +53,23 @@ public class Lab08 {
     
     public static int[] getAllGreaterThan(int[] Array, int compareValue){
         int newArray[] =  new int[Array.length]; // Create a new array
+        int count = 0;
 
         for(int i = 0; i < Array.length; i++){
             if(Array[i] > compareValue){
                 newArray[i] = Array[i];
+                count++;
             }
         }
-        return newArray;
+        //System.out.printf("\nCount of > than %d : %d",compareValue,count);
+        int correctArray[] = new int[count];
+        int j = 0;
+        for(int i = 0; i < newArray.length; i++){
+            if(newArray[i] != 0){
+                correctArray[j] = newArray[i];
+                j++;
+            }
+        }
+        return correctArray;
     }
 }
