@@ -1,34 +1,25 @@
 import java.util.Scanner; // import the Scanner class
 //import java.util.ArrayList; // import the ArrayList class
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
+
 public class workStation {
-   public static void updateScoreVals(int[] scoreVals, int updateVal) {
-      int i;
-
-      for (i = 0; i < scoreVals.length; ++i) {
-          scoreVals[i] = scoreVals[i] + updateVal;
-      }
-   }
-   public static void printScoreVals(int[] scoreVals) {
-       int i;
-
-       for (i = 0; i < scoreVals.length; ++i) {
-           System.out.println(scoreVals[i]);
-       }
-   }
-
-   public static void main(String[] args) {
-      Scanner scnr = new Scanner(System.in);
-      final int NUM_SCORES = 4;
-      int[] quizScores = new int[NUM_SCORES];
-      int scoreUpdate = 1;
-      int i;
-
-      for (i = 0; i < quizScores.length; ++i) {
-          quizScores[i] = scnr.nextInt();
-      }
-
-      updateScoreVals(quizScores, scoreUpdate);
-      printScoreVals(quizScores);
-   }
-}
+    public static void main(String[] args) {
+        String item;
+        int quantity;
+        int discount;
+  
+        StringWriter itemCharStream = new StringWriter();
+        PrintWriter itemOSS = new PrintWriter(itemCharStream);
+  
+        item = "Mug";
+        quantity = 10;
+        discount = 30;
+  
+        itemOSS.println(item + " x" + quantity);
+        itemOSS.print(discount + "% off");
+  
+        System.out.print(itemCharStream.toString());
+     }
+  }
