@@ -7,13 +7,13 @@ class Main {
       // testing the getAverage method
       System.out.println("Testing getAverage method");
       ArrayList<Double> arr = new ArrayList<Double>();
-      for (int i = 1; i <= 10; i++) {
+      for (int i = 1; i <= 5; i++) {
          arr.add((double) i);
       }
-      if (getAverage(arr) != 5.5) {
+      if (getAverage(arr) != 3.0) {
          isPassed = false;
       }
-      System.out.printf("Expected: 5.5 : Actual: %.1f : Passed? %b\n", getAverage(arr), isPassed);
+      System.out.printf("Expected: 3.0 : Actual: %.1f : Passed? %b\n", getAverage(arr), isPassed);
 
       // testing the getMin method
       if (getMin(arr) != 1.0){
@@ -23,11 +23,27 @@ class Main {
       System.out.printf("Expected: 1.0 : Actual: %.1f : Passed? %b\n", getMin(arr), isPassed);
 
       // testing the getMax method
-      if (getMax(arr) != 10.0){
+      if (getMax(arr) != 5.0){
          isPassed = false;
       }
       System.out.println("\nTesting getMax method");
-      System.out.printf("Expected: 10.0 : Actual: %.1f : Passed? %b\n", getMax(arr), isPassed);
+      System.out.printf("Expected: 5.0 : Actual: %.1f : Passed? %b\n", getMax(arr), isPassed);
+
+      // Center Data
+      System.out.println("\nTesting Center Data method");
+      System.out.print("The Array before centering: ");
+      for(int i = 0; i < arr.size(); i++){
+         System.out.printf("%.1f ", arr.get(i));
+      }
+      System.out.println();
+      arr = center(arr);
+      System.out.print("The Array after  centering: ");
+      for(int i = 0; i < arr.size(); i++){
+         System.out.printf("%.1f ", arr.get(i));
+      }
+      System.out.println();
+
+
    }
 
    public static double getAverage(ArrayList<Double> arr) {
@@ -56,5 +72,15 @@ class Main {
          }
       }
       return max;
+   }
+
+   public static ArrayList<Double> center(ArrayList<Double> arr){
+      ArrayList<Double> centered = new ArrayList<Double>();
+      // Subtracting the input value to ArrayList entries
+      for (int i = 0; i < arr.size(); i++) {
+         centered.add(( arr.get(i) - getAverage(arr) ) );
+      }
+
+      return centered;
    }
 }
