@@ -1,64 +1,26 @@
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.FileInputStream;
+import java.io.PrintWriter;
 
 class Main {
    public static void main(String[] args) throws IOException {
-      boolean isPassed = true;
-      // testing the getAverage method
-      System.out.println("Testing getAverage method");
-      ArrayList<Double> arr = new ArrayList<Double>();
-      for (int i = 1; i <= 5; i++) {
-         arr.add((double) i);
-      }
-      if (getAverage(arr) != 3.0) {
-         isPassed = false;
-      }
-      System.out.printf("Expected: 3.0 : Actual: %.1f : Passed? %b\n", getAverage(arr), isPassed);
+      Scanner scnr = new Scanner(System.in);
+      ArrayList<Double> myData = null;
 
-      // testing the getMin method
-      if (getMin(arr) != 1.0){
-         isPassed = false;
-      }
-      System.out.println("\nTesting getMin method");
-      System.out.printf("Expected: 1.0 : Actual: %.1f : Passed? %b\n", getMin(arr), isPassed);
+      // Collect data file name from user
+      System.out.print("Enter data file name : ");
+      String dataFileName = scnr.nextLine();
 
-      // testing the getMax method
-      if (getMax(arr) != 5.0){
-         isPassed = false;
-      }
-      System.out.println("\nTesting getMax method");
-      System.out.printf("Expected: 5.0 : Actual: %.1f : Passed? %b\n", getMax(arr), isPassed);
-
-      // Center Method
-      System.out.println("\nTesting Center Data method");
-      System.out.print("The Array before centering: ");
-      for(int i = 0; i < arr.size(); i++){
-         System.out.printf("%.1f ", arr.get(i));
-      }
-      System.out.println();
-      arr = center(arr);
-      System.out.print("The Array after  centering: ");
-      for(int i = 0; i < arr.size(); i++){
-         System.out.printf("%.1f ", arr.get(i));
-      }
-      System.out.println();
-
-      // Scaled Method
-      System.out.println("\nTesting Scale Data method");
-      System.out.print("The Array before scaling: ");
-      for(int i = 0; i < arr.size(); i++){
-         System.out.printf("%.1f ", arr.get(i));
-      }
-      System.out.println();
-      arr = scale(arr, 100);
-      System.out.print("The Array after  scaling: ");
-      for(int i = 0; i < arr.size(); i++){
-         System.out.printf("%.1f ", arr.get(i));
-      }
-      System.out.println();
-
-
-   }
+      // get the data from the file
+      myData = loadData(dataFileName);
+      // normalize the data
+      normalize(myData);
+      // outut the normalized data to the required file
+      saveData(myData);
+  }
 
    public static double getAverage(ArrayList<Double> arr) {
       double sum = 0;
@@ -88,23 +50,60 @@ class Main {
       return max;
    }
 
-   public static ArrayList<Double> center(ArrayList<Double> arr){
-      ArrayList<Double> centered = new ArrayList<Double>();
-      // Subtracting the input value to ArrayList entries
+   public static void center(ArrayList<Double> arr){
+      // Subtracting the input value to ArrayList
+      ArrayList<Double> temp = new ArrayList<Double>();
       for (int i = 0; i < arr.size(); i++) {
-         centered.add(( arr.get(i) - getAverage(arr) ) );
+         temp.add(( arr.get(i) - getAverage(arr)));
       }
-
-      return centered;
+      arr.clear();
+      for(int i = 0; i < temp.size(); i++){
+         arr.add(temp.get(i));
+      }
    }
-
-   public static ArrayList<Double> scale(ArrayList<Double> arr, int newRange){
+   
+   public static void scale(ArrayList<Double> arr, double newRange){
       double currentRange = getMax(arr) - getMin(arr);
       double scale = newRange / currentRange;
-      ArrayList<Double> scaled = new ArrayList<Double>();
+      ArrayList<Double> temp = new ArrayList<Double>();
       for (int i = 0; i < arr.size(); i++) {
-         scaled.add(arr.get(i) * scale);
+         temp.add(arr.get(i) * scale);
       }
-      return scaled;
+      arr.clear();
+      for(int i = 0; i < temp.size(); i++){
+         arr.add(temp.get(i));
+      }
+   }
+   
+   public static void normalize(ArrayList<Double> arr){
+      center(arr);
+      scale(arr, 100);
+   }
+   
+   public static ArrayList<Double> loadData(String fileName) throws IOException {
+      ArrayList<Double> loading = new ArrayList<Double>();
+      FileInputStream fileByteStream = null; // File input stream
+      Scanner inFS = null;                   // Scanner object
+      
+      fileByteStream = new FileInputStream(fileName);
+      inFS = new Scanner(fileByteStream);
+      
+      while(inFS.hasNext()){
+         loading.add(inFS.nextDouble());
+      }
+      
+      return loading;
+   }
+   
+   public static void saveData(ArrayList<Double> arr) throws IOException{
+      PrintWriter outFS = null; // PrintWriter object
+      
+      outFS = new PrintWriter("normal.dat");
+      
+      for(int i = 0; i < arr.size(); i++){
+         outFS.printf("%.2f\n",arr.get(i));
+      }
+      
+      outFS.close();
    }
 }
