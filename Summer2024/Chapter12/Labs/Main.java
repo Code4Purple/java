@@ -29,7 +29,7 @@ class Main {
       System.out.println("\nTesting getMax method");
       System.out.printf("Expected: 5.0 : Actual: %.1f : Passed? %b\n", getMax(arr), isPassed);
 
-      // Center Data
+      // Center Method
       System.out.println("\nTesting Center Data method");
       System.out.print("The Array before centering: ");
       for(int i = 0; i < arr.size(); i++){
@@ -38,6 +38,20 @@ class Main {
       System.out.println();
       arr = center(arr);
       System.out.print("The Array after  centering: ");
+      for(int i = 0; i < arr.size(); i++){
+         System.out.printf("%.1f ", arr.get(i));
+      }
+      System.out.println();
+
+      // Scaled Method
+      System.out.println("\nTesting Scale Data method");
+      System.out.print("The Array before scaling: ");
+      for(int i = 0; i < arr.size(); i++){
+         System.out.printf("%.1f ", arr.get(i));
+      }
+      System.out.println();
+      arr = scale(arr, 100);
+      System.out.print("The Array after  scaling: ");
       for(int i = 0; i < arr.size(); i++){
          System.out.printf("%.1f ", arr.get(i));
       }
@@ -82,5 +96,15 @@ class Main {
       }
 
       return centered;
+   }
+
+   public static ArrayList<Double> scale(ArrayList<Double> arr, int newRange){
+      double currentRange = getMax(arr) - getMin(arr);
+      double scale = newRange / currentRange;
+      ArrayList<Double> scaled = new ArrayList<Double>();
+      for (int i = 0; i < arr.size(); i++) {
+         scaled.add(arr.get(i) * scale);
+      }
+      return scaled;
    }
 }
