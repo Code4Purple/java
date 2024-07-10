@@ -1,5 +1,6 @@
-import java.util.ArrayList;
+package Summer2024.Chapter11.Individual_Assignments;
 
+import java.util.ArrayList;
 public class PrintArrayList {
     public static void main(String[] args) {
         // Your code here
