@@ -23,6 +23,7 @@ public class ChangeMachine {
                 + 0.05 * myChange.nickelCount;
         
         System.out.println("You have: $" + myChange.total);
+        scnr.close();
     }
 }
 
