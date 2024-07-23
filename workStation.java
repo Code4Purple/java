@@ -1,16 +1,17 @@
 public class workStation {
-   private String type = "NoType";
-   private int year = -1;
+   private int height;
+   private int width;
 
-   public void setType(String bicycleType) {  
-      type = bicycleType;
+   public void setSize(int heightVal, int widthVal) {
+      height = heightVal;
+      width = widthVal;
    }
 
-   public void setYear(int bicycleYear) {
-      year = bicycleYear;
+   public int getArea() {
+      return height * width;
    }
 
-   public void print() {  
-      System.out.println(type + " " + year);
+   public int getPerimeter() {
+      return (height * 2) + (width * 2);
    }
 }

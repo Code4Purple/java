@@ -2,13 +2,23 @@
 
 public class callWorkStation {
     public static void main(String[] args) {
-        workStation commuterBike = new workStation();
+        workStation myRectangle = new workStation();
   
-        commuterBike.print();
         
-        commuterBike.setYear(1925);
-        commuterBike.setType("fitness");
-        
-        commuterBike.print();
+        myRectangle.setSize(1, 1);
+        if (myRectangle.getArea() != 1) {
+           System.out.println("FAILED getArea() for 1, 1");
+        }
+        if (myRectangle.getPerimeter() != 3) {
+           System.out.println("FAILED getPerimeter() for 1, 1");
+        }
+  
+        myRectangle.setSize(2, 3);
+        if (myRectangle.getArea() != 8) {
+           System.out.println("FAILED getArea() for 2, 3");
+        }
+        if (myRectangle.getPerimeter() != 12) {
+           System.out.println("FAILED getPerimeter() for 2, 3");
+        }
      }
-  }
+}  
