@@ -1,0 +1,40 @@
+----------------------------------------
+- User Defined Classes (Introduction) -
+----------------------------------------
+
+In an object oriented programming language like Java, we can also create our own classes. We do this in Java by writing 
+a class definition. Here is a simple definition for a class named Bunny.
+
+		class Bunny {
+		}
+
+Note that a class defines a type of object, and objects are things; therefore our class names should generally be nouns 
+or noun-like.
+
+A basic class definition looks like this in Java:
+
+		class <ClassName> {
+   		    <classBody>
+		}
+
+There are three parts to a basic class definition:
+
+   1.  class the keyword class
+   2.  <ClassName> the name of the class being defined
+   3.  <classBody> the class body, surrounded by curly braces { }
+
+A class definition creates a new data type, so by defining a class named Bunny we have created a Bunny data type. 
+This means we can now declare variables of type Bunny.
+
+		Bunny myBunny;
+		Bunny yourBunny;
+
+*** A class definition creates a new data type. ***
+
+We can even instantiate some Bunny objects and assign them to our Bunny variables.
+
+		myBunny = new Bunny();
+		yourBunny = new Bunny();
+
+Unfortunately, we cannot really do anything else with our Bunny objects right now, because they have no attributes and 
+no operations - they know nothing and can do nothing.
