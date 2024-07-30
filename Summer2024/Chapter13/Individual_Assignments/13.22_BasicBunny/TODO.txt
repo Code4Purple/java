@@ -1,0 +1,99 @@
+You will notice that the given Bunny class defines two attributes. 
+The first attribute is a int variable named age, and the second attribute is a String variable named name - 
+so each Bunny object will know its *name and its *age*. The Bunny class also defines three operations. 
+The first operations is a method named hop, the second operation is a method named eat, and the third operation is a 
+method named sleep - so each Bunny will be able to *hop*, *Eat*, and *sleep*.
+
+It can be very helpful to write some code in the main method to test the methods you are writing. It can also be 
+helpful to submit your code for auto-grading after completing each part, and to make sure that you pass the Structure 
+and Logic tests for each part before moving on to the next part.
+
+-> Part 01 - Make Bunny
+
+For this part you must write a public static method named makeBunny. This method will take two arguments. 
+The first argument will be a String and the second argument will be an int. This method must instantiate a new 
+Bunny object, then store the first argument value in the Bunny object's name attribute, and store the second argument 
+value in the Bunny object's age attribute. Finally, this method must must return the new Bunny object.
+
+After you have finished wring this method, Run your code to find and then fix any syntax errors. 
+You may also wish to write some other code (in the main method) to call and test your method(s). 
+When you are confident that your method is structurally and logically correct, then submit your code to the 
+auto-grader for feedback. Your code should pass Structure test 1 and Logic tests 1.1 and 1.2 before you continue.
+
+-> Part 02 - Display Info
+
+For this part you must write a public static method named displayInfo. This method will take a Bunny reference as an 
+argument, and it will return nothing. When called, and a Bunny named Flopsy and with an age of 3 is passed as an 
+argument this method will print out to the terminal, a message exactly like the following:
+
+Flopsy is a 3 year old bunny.
+
+If this method is called with a Bunny with a different name (like Mopsy) and a different age (like 5), 
+then the message will be different, like this:
+
+Mopsy is a 5 year old bunny.
+
+After you have finished wring this method, Run your code to find and then fix any syntax errors. 
+You may also wish to write some other code (in the main method) to call and test your method(s). 
+When you are confident that your method is structurally and logically correct, then submit your code to the 
+auto-grader for feedback. Your code should pass Structure test 2 and Logic tests 2.1 and 2.2 before you continue.
+
+-> Part 03 - Have Birthday
+
+For this part you must write a public static method named haveBirthday. This method will take a Bunny as an argument, 
+and it will return nothing. This method will simply increase the value of the age attribute of the Bunny object by 1.
+
+Remember that, as non-primitive data types, Bunny objects are passed by reference to methods. This means that the 
+method will have access to make changes to the original Bunny object. So, if we call this method and pass, as an 
+argument, a Bunny object with an age of 3, then after this method returns, the value stored in the Bunny object's age 
+attribute will be 4.
+
+After you have finished wring this method, Run your code to find and then fix any syntax errors. You may also wish to 
+write some other code (in the main method) to call and test your method(s). When you are confident that your method is 
+structurally and logically correct, then submit your code to the auto-grader for feedback. 
+Your code should pass Structure test 3 and Logic tests 3.1 and 3.2 before you continue.
+
+-> Part 04 - Change Name
+
+For this part you must write a public static method named changeName. This method will take a Bunny as its first 
+argument, and a String as its second argument, and it will return nothing. This method will simply replace the value 
+of the name attribute of the Bunny object with the value of the second argument.
+
+Remember that, as non-primitive data types, Bunny objects are passed by reference to methods. 
+This means that the method will have access to make changes to the original Bunny object. So, if we call this method 
+and pass, as an argument, a Bunny object with a name of "Flopsy" and a second argument value of "Mopsy", then after 
+this method returns, the value stored in the Bunny object's name attribute will be "Mopsy".
+
+After you have finished wring this method, Run your code to find and then fix any syntax errors. 
+You may also wish to write some other code (in the main method) to call and test your method(s). 
+When you are confident that your method is structurally and logically correct, then submit your code to the 
+auto-grader for feedback. Your code should pass Structure test 4 and Logic tests 4.1 and 4.2 before you continue.
+
+-> Part 05 - Feed Bunny
+
+For this part you must write a public static method named feed. This method will take four arguments and return nothing. 
+The first argument will be a Bunny. The next three arguments will all be String values. The three String values will 
+be types of food, with the first being the appetizer, the second being the main course, and the third being a dessert. 
+
+This method will call the eat method of the Bunny object that is passed as the first argument three times. 
+The first time the eat method is called the appetizer String will be passed as the argument to the eat method. 
+The second time the eat method is called the main course String will be passed as the argument to the eat method. 
+The third time the eat method is called the dessert String will be passed as the argument to the eat method.
+
+After you have finished wring this method, Run your code to find and then fix any syntax errors. You may also wish to 
+write some other code (in the main method) to call and test your method(s). When you are confident that your method is 
+structurally and logically correct, then submit your code to the auto-grader for feedback. Your code should pass 
+Structure test 5 and Logic tests 5.1 and 5.2 before you continue.
+
+-> Part 06 - Play
+
+For this part you must write a public static method named play. This method will take a Bunny as an argument, and it 
+will have no return value. This method will first call the hop method of the Bunny object that is passed as the 
+argument. This method will then call the eat method of the Bunny object twice - the first time passing the String 
+value "lettuce" as the argument, and the second time passing the String value "carrots" as the argument. Finally, 
+this method will call the sleep method of the Bunny object.
+
+After you have finished wring this method, Run your code to find and then fix any syntax errors. You may also wish to 
+write some other code (in the main method) to call and test your method(s). When you are confident that your method is 
+structurally and logically correct, then submit your code to the auto-grader for feedback. Your code should pass 
+Structure test 6 and Logic tests 6.1 and 6.2 before you continue.
