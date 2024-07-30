@@ -1,0 +1,168 @@
+--------------------------------------------
+- Reference Types and Reference Assignment -
+--------------------------------------------
+
+In Java, all non-primitive types are reference types. You will recall that Java has only eight primitive types. 
+Any data type that is not one of the following eight will be a reference type.
+
+-> Java Primitive Types (Chart) 
+-----------------------------------------------------------------------------------------------
+| boolean | a logical type with valid values of true and false				                  |
+| byte	  | an 8 bit integer type with a range of -128 to +127					              |
+| short   | a 16 bit integer type with a range of -32,768 to +32,767                          |
+| int     | a 32 bit integer type with a range of -2,147,483,648 to +2,147,483,647            |
+| long    | a 64 bit integer type with a range of roughly (+/-) 9 * 10 ^ 18                   |
+| float   | a 32 bit floating point type with reduced range and precision                     |
+| double  | a 64 bit floating point type with a large range and high precision                |
+| char    | a 16 bit integer type that can store any unicode character                        |
+-----------------------------------------------------------------------------------------------
+
+	-> Non-primitive types are reference types in Java... <-
+
+As you know, all variables in Java must be declared, and the variable declaration must specify the datatype of the 
+variable. A variable of a non-primitive type must store a reference to an object of that type, or the special null 
+reference. A variable of type Scanner always stores a reference to a Scanner object, or it stores a null reference. 
+A null reference means that the variable does not refer to any object at this time.
+
+-> Value Types vs. Reference Types
+
+This is very different behavior from a value type variable. A value type variable will always store a value of that 
+type. For example a variable of type int will always store an int value - the value may be positive, negative, or zero, 
+but there will be an int value stored in an int variable at all times. On the other hand, a reference type variable can 
+store a reference to an object of the variable's type, but it can also store a null reference. So, a reference type 
+variable is either null (referring to no object at this time), or it is referring to an object of the variable's type. 
+So, while a value type variable can never be empty, a reference type variable can be null (which is essentially empty).
+
+	-> Reference type variables: either store an object reference or they store a null reference. <-
+
+->  Null Reference vs. Object Reference
+
+If we declare a variable named input of type Scanner, then that input variable will either store an object reference or 
+a null reference. The declared variable will store a null reference (by default initialization), if we do not 
+explicitly initialize the variable to an object reference. While an object reference is a reference to some actual 
+object in memory, the null reference is a reference to nothing.
+
+	Scanner input; // Scanner variable storing a default null reference 
+
+We can also use the Java keyword null to explicitly store a null reference in a reference type variable. 
+The keyword null is the Java literal for a null reference.
+
+	Scanner input = null; // Scanner variable storing a null reference
+
+When we assign a value to a reference variable (like this input variable) we will be replacing the reference that it 
+currently stores with a new reference. Below, we are instantiating a new Scanner object and storing a reference to this new object in our input variable.
+
+	input = new Scanner(System.in); // replace null ref. With object ref.  
+
+To see the difference between a reference variable that currently stores a null reference, and that same variable 
+storing a reference to an object of the variable's data type, consider the following code.
+
+	Scanner input = null; // Scanner variable storing a null reference
+	System.out.print("Enter your name: ");
+	String name = input.nextLine();
+
+---------------------------- Code Editor 13.18.1: null reference Exception Example 1 --------------------------------
+
+import java.util.Scanner;
+ 
+public class Main {
+  public static void main(String[] args) {
+    Scanner input = null; // variable storing null reference
+ 
+    System.out.print("Enter your name: ");
+    String name = input.nextLine();
+ 
+    System.out.println("Hello " + name + "!");
+  }
+}
+
+----------------------------------------------------------------------------------------------------------------------
+
+You should get the following runtime error message if you run the code above.
+
+-------------------------------------------------------------------------------
+	Exception in thread "main" java.lang.NullPointerException
+   		at Driver.main(Driver.java:8)
+-------------------------------------------------------------------------------
+
+This is a very common runtime error for many Java programmers. But fear not, the solution to this error is always 
+simple. This error always means the same thing - that on the specified line of code (line 8 in this case) you are 
+asking a nothing to do something. But, a nothing cannot do something.
+
+	null is nothing.
+
+The null reference is a reference to nothing. Since there is a null reference stored in the input variable, the 
+variable refers to nothing. So, on line 8 we are asking this nothing to do something input.nextLine(), and Java 
+responds with an error (an exception). The solution is to store an actual object reference in the variable before we 
+ask it to do something. This usually means that we need to instantiate an object of this type and assign it to the 
+variable, which we often do (by explicit initialization) when we declare the variable.
+
+	Scanner input = new Scanner(System.in);
+
+Try the revised code below to see that it now works; because we now have a reference to an actual Scanner object stored 
+in our input variable.
+
+----------------------- Code Editor 13.18.2: null reference Exception Example 2 ----------------------------------------
+
+import java.util.Scanner;
+ 
+public class Main {
+  public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+ 
+    System.out.print("Enter your name: ");
+    String name = input.nextLine();
+ 
+    System.out.println("Hello " + name + "!");
+  }
+}
+
+----------------------------------------------
+Input : Enter your name : Bob Smith
+Ouput : Hello Bob Smith!
+----------------------------------------------------------------------------------------------------------------------
+
+-> Reference Assignment
+
+Recall that a class definition creates a new data type. The following class definition creates a new data type named 
+Bunny.
+
+	class Bunny {
+	   public int age = 0;
+	   public String name = "";
+
+  	   public void hop() {
+		 System.out.println(name + " hops around.");
+   	   }
+
+	   public void eat(String food) {
+      		 System.out.println(name + " eats the " + food + ".");
+	   }
+
+           public void sleep() {
+	       System.out.println(name + " takes a nap.");
+	   }
+	}
+
+Given the above class definition, consider the following code.
+
+Bunny flopsy;
+Bunny cottontail;
+
+flopsy = new Bunny();
+flopsy.name = "Flopsy";
+flopsy.age = 8;
+
+cottontail = flopsy; // !!!
+cottontail.name = "Cottontail";
+cottontail.age = 5;
+
+System.out.println(flopsy.name);
+
+----------------------------------------------------------------------------------------------------------------------
+
+You may have been quite surprised to see that flopsy.name is "Cottontail". How did this happen? We explicitly stored 
+"Flopsy" in the name variable of the Bunny object that the flopsy variable refers to (flopsy.name = "Flopsy";). And, we 
+stored "Cottontail" in the name variable of the Bunny object that the cottontail variable refers to 
+(cottontail.name = "Cottontail";).
+
