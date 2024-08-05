@@ -25,4 +25,10 @@ public class Main {
     public static void changeName(Bunny bunny, String newName){
         bunny.name = newName;
     }
+
+    public static void feed(Bunny bunny, String appetizer, String mainCourse, String dessert){
+        bunny.eat(appetizer);
+        bunny.eat(mainCourse);
+        bunny.eat(dessert);
+    }
 }
