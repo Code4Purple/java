@@ -3,7 +3,8 @@
 
 public class Main {
     public static void main(String[] args) {
-    
+        Bunny bugs = makeBunny("Bugs", 3);
+        displayInfo(bugs);
     }
 
     public static Bunny makeBunny(String name, int age){
@@ -11,12 +12,13 @@ public class Main {
         bunny.name = name;
         bunny.age = age;
         return bunny;
+
         //return new Bunny();
     }
 
-    public static void displayInfo(){
-        Bunny bunny = makeBunny("Bugs", 2);
-                
+    public static void displayInfo(Bunny bunny){
+        
+        
         // Output
         String output = "%s is a %d year old bunny.";
         System.out.printf(output, bunny.name, bunny.age);
