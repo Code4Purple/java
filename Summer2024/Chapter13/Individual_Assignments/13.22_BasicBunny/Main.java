@@ -2,11 +2,7 @@
 
 
 public class Main {
-    public static void main(String[] args) {
-        Bunny bugs = makeBunny("Bugs", 3);
-        displayInfo(bugs);
-    }
-
+    
     public static Bunny makeBunny(String name, int age){
         Bunny bunny = new Bunny();
         bunny.name = name;
@@ -17,10 +13,16 @@ public class Main {
     }
 
     public static void displayInfo(Bunny bunny){
-        
-        
         // Output
         String output = "%s is a %d year old bunny.";
         System.out.printf(output, bunny.name, bunny.age);
+    }
+
+    public static void haveBirthday(Bunny bunny){
+        bunny.age++;
+    }
+
+    public static void changeName(Bunny bunny, String newName){
+        bunny.name = newName;
     }
 }
