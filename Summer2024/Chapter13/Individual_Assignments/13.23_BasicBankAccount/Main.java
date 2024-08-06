@@ -35,7 +35,7 @@ public class Main {
         
     }
 
-    public static void deposit(BankAccount account, double paycheck, double commissionCheck){
+    public static void depositChecks(BankAccount account, double paycheck, double commissionCheck){
         account.deposit(paycheck);
         account.deposit(commissionCheck);
     }
