@@ -18,4 +18,25 @@ public class Main {
         System.out.printf(output, account.accountNumber, account.accountHolderName, account.accountBalance);
 
     }
+
+    public static void chargeServiceFee(BankAccount account, double fee){
+        account.accountBalance -= fee;
+    }
+
+    public static void applyInterest(BankAccount account, double interestRate){
+        double appliedInterest = account.accountBalance * interestRate;
+        account.accountBalance += appliedInterest;
+    }
+
+    public static void payBills(BankAccount account, double rent, double utilitiesBill, double phoneBill){
+        account.withdraw(rent);
+        account.withdraw(utilitiesBill);
+        account.withdraw(phoneBill);
+        
+    }
+
+    public static void deposit(BankAccount account, double paycheck, double commissionCheck){
+        account.deposit(paycheck);
+        account.deposit(commissionCheck);
+    }
 }
