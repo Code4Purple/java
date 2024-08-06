@@ -31,4 +31,12 @@ public class Main {
         bunny.eat(mainCourse);
         bunny.eat(dessert);
     }
+
+    public static void play(Bunny bunny){
+        bunny.hop();
+        bunny.eat("lettuce");
+        bunny.eat("carrots");
+        bunny.sleep();
+
+    }
 }
