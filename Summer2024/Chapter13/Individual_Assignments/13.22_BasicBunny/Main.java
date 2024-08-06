@@ -37,6 +37,5 @@ public class Main {
         bunny.eat("lettuce");
         bunny.eat("carrots");
         bunny.sleep();
-
     }
 }
