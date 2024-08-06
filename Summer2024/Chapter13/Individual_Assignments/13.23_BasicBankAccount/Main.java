@@ -8,9 +8,14 @@ public class Main {
         return account;
     }
 
-    public static void displayInfo(BankAccount account){
+    public static void displayAccountInfo(BankAccount account){
         // Output
-        String output = "Account Holder: %s\nAccount Number: %s\nAccount Balance: $%.2f";
-        System.out.printf(output, account.accountHolderName, account.accountNumber, account.accountBalance);
+        String number = "Account number      : %s\n";
+        String name = "Account holder name : %s\n";
+        String balance = "Account Balance     : $%.2f\n";
+        String output = number + name + balance;
+
+        System.out.printf(output, account.accountNumber, account.accountHolderName, account.accountBalance);
+
     }
 }
