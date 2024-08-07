@@ -1,0 +1,26 @@
+-----------------------------------
+- Parameters of reference types -
+-----------------------------------
+
+-> Methods with reference variables as parameters
+
+A reference variable is a variable that points to, or refers to, an object or array. Internally, a reference variable 
+stores a reference, or the memory location, of the object to which it refers. A programmer can only access the data or 
+functionality provided by objects through the use of reference variables. Because reference variables store object 
+locations and not the object data itself, passing a reference variable as a method argument assigns the argument's 
+stored reference to the corresponding method parameter. Similarly, returning a reference variable returns an object 
+reference. 
+
+
+-> Methods with user-declared reference variables as parameters
+
+A programmer-defined object is passed to a method by passing a reference (i.e., memory location) to the object. 
+The reference to the object is copied to the method's parameter, so the method can modify the object. The following 
+example uses the DeviceOrientation class to represent the smartphone's orientation in terms of pitch and roll of a 
+device such as a smartphone. This information is typically used to track a device for purposes such as changing screen 
+orientation. The updateOrientation method modifies a DeviceOrientation object by calling the object's member methods 
+that modify the object.
+
+A parameter of reference type allows object modification only through the object's public methods or fields. Assigning 
+a different value to a parameter variable of reference type, as in device = new DeviceOrientation();, assigns a new 
+object to the reference variable, but does not modify the original object to which the variable first referred.
