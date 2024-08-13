@@ -1,0 +1,19 @@
+----------------------------------------------
+       Bill(s)  	     |      Amount(s)   
+----------------------------------------------
+       Planet-Fitness             $23.06      
+       Ring                       $4.99      
+       Hims                       $79.0      
+       State-Farm-Life            $24.37      
+       State-Farm-Health          $9.18      
+       State-Farm-Car             $331.59      
+       Comcast                    $80.0      
+       Sallie-Mae-Bank            $414.67      
+       The-Daily-Wire             $16.41      
+       Hulu                       $26.26    
+       Rent			      $800
+       Car-Payment                $250  
+       Prime			      $16.41
+       GitHub AI		      $10.00
+----------------------------------------------
+		    Total         $2085.41   

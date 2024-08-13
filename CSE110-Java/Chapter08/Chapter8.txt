@@ -1,0 +1,124 @@
+------------------------------
+        CHapter 8.1
+------------------------------
+
+Loop basics
+
+A loop is a program construct that repeatedly executes the loop's statements (known as the loop body) while the loop's 
+expression is true; when the expression is false, execution proceeds past the loop. Each time through a loop's statements 
+is called an iteration
+
+---------------------------------
+        Chapter 8.2
+---------------------------------
+
+While loop: Basics
+
+A while loop is a program construct that repeatedly executes a list of sub-statements (known as the loop body) while the loop's 
+expression evaluates to true. Each execution of the loop body is called an iteration. Once entering the loop body, execution continues 
+to the body's end, even if the expression would become false midway through.
+
+
+Common errors
+
+A common error is to use the opposite loop expression than desired, like using x == 0 rather than x != 0. 
+Programmers should remember that the expression describes when the loop should iterate, not when the loop should terminate.
+
+An infinite loop is a loop that never stops iterating. A common error is to accidentally create an infinite loop, often by forgetting to 
+update a variable in the body, or by creating a loop expression whose evaluation to false isn't always reachable.
+
+
+-------------------------------------
+                8.4
+-------------------------------------
+
+Basics
+
+A loop commonly must iterate a specific number of times, such as 10 times. Though achievable with a while loop, 
+that situation is so common that a special kind of loop exists. A for loop is a loop with three parts at the 
+top: a loop variable initialization, a loop expression, and a loop variable update. 
+A for loop describes iterating a specific number of times more naturally than a while loop.
+
+The statement i = i + 1 is so common that the language supports the shorthand ++i, 
+with ++ known as the increment operator. (Likewise, -- is the decrement operator, --i means i = i - 1).
+As such, a standard way to loop N times is shown below. 
+
+----------------------------------------------------------------------------------------------
+        Choosing between while and for loops: General guidelines (not strict rules though).
+----------------------------------------------------------------------------------------------
+for 	Number of iterations is computable before the loop, like iterating N times.
+
+while 	Number of iterations is not (easily) computable before the loop, like iterating until the input is 
+        'q'.
+
+
+--------------------------------------
+        Loop style issues
+--------------------------------------
+Starting with 0
+        Programmers in C, C++, Java, and other languages have generally standardized on looping N times by starting 
+        with i = 0 and checking for i < N, rather than by using i = 1 and i <= N. One reason is due to other constructs 
+        (arrays / vectors), often used with loops, start with 0. Another is simply that a choice was made.
+
+The ++ operators
+        The ++ operator can appear as ++i (prefix form) or as i++ (postfix form). ++i increments i first and then 
+        evaluates the result, while i++ evaluates the result first and then increments i. 
+        The distinction is relevant in a statement like x = ++i vs. x = i++; if i is 5, the first yields x = 6, 
+        the second x = 5.
+
+        Some consider ++i safer for beginners in case they type i = ++i, which typically works as expected 
+        (whereas i = i++ does not), so this material uses ++i throughout. The -- operator also has prefix and '
+        ostfix versions. Incidentally, the C++ programming language gets its name from the ++ operator, 
+        suggesting C++ is an increment or improvement over its C language predecessor.
+
+In-loop declaration of i
+        Variables can be declared throughout code, so many programmers use: for (int i = 0; i < N; ++i). But, the teaching experience of this material's authors suggests such declarations may confuse learners who may declare variables within loops, repeatedly re-declaring variables, etc. This material avoids the in-loop declaration approach. The authors hope to make the learning less error-prone, and have confidence that programmers can easily pick up on the common in-loop declaration approach later.
+
+
+--------------------------------------------
+                8.7
+--------------------------------------------
+
+A nested loop is a loop that appears in the body of another loop. The nested loops are commonly referred to as the inner loop and outer loop.
+Nested loops have various uses. One use is to generate all combinations of some items. For example, the following program generates all two-letter .com Internet domain names.
+
+--------------------------------------------
+                8.10
+--------------------------------------------
+
+A continue statement in a loop causes an immediate jump to the loop condition check. 
+A continue statement can sometimes improve the readability of a loop.
+
+----------------------------------------------
+                8.11
+----------------------------------------------
+
+-----------------------------------------
+        Scope of names
+-----------------------------------------
+A declared name is only valid within a region of code known as the name's scope. 
+Ex: A variable userNum declared in main() is only valid within main(), from the declaration to main()'s end.
+
+Most of this material declares variables at the top of main() (and if the reader has studied methods, 
+at the top of other methods). However, a variable may be declared within other blocks too. 
+A block is a brace-enclosed {...} sequence of statements, such as found with an if-else, for loop, 
+or while loop. A variable name's scope extends from the declaration to the closing brace }.
+
+----------------------------------------------------
+                8.12
+----------------------------------------------------
+
+The program declares a new enumeration type named LightState. The program then declares a new variable lightVal of that type. The loop updates lightVal based on the user's input.
+
+The example illustrates the idea of a state machine that is sometimes used in programs, especially programs that interact with physical objects, wherein the program moves among particular situations ("states") depending on input; see What is: State machine.
+
+A programmer must include both the enumeration type and the enumerator within that type, as in lightVal = LightState.RED;. A common error is to omit the enumeration type in an expression. For example, the statement lightVal = RED; results in a compilation error.
+
+Different enumerated types may use some of the same enumerators. For example, the above program might also declare public enum Warnings {GREEN, ORANGE, RED}. The enumeration values are then accessed as Warnings.RED and LightState.RED.
+
+One might ask why the light variable wasn't simply declared as a string, and then compared with strings "GREEN", "RED", and "YELLOW". Enumerations are safer. If using a string, an assignment like light = "ORANGE" would not yield a compiler error, even though ORANGE is not a valid light color. Likewise, light == "YELOW" would not yield a compiler error, even though YELLOW is misspelled.
+
+One could instead declare final variables for strings like final String LS_GREEN = "GREEN"; or even integer values like final int LS_GREEN = 0; and then use those constants in the code, but an enumeration is clearer, requires less code, and is less prone to error.
+
+
+URL: https://www.techtarget.com/whatis/definition/finite-state-machine

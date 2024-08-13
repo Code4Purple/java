@@ -1,0 +1,266 @@
+---------------------------------
+            10.1
+---------------------------------
+
+An array is an ordered collection of variables (called elements). 
+Each variable in the array (each element) has the same data type and the same name. 
+Individual elements (variables) of the array are accessed by an integer index number, 
+indicating their position in the array - relative to the first array element which is 
+at index 0.
+
+To summarize, an array is a
+
+    set of variables (elements)
+    with same name
+    and same data type
+    all located contiguously in memory (providing very fast access)
+    each element is accessed by an integer index
+
+Arrays allow us to create a specified number of variables (all of the same data type) 
+with a single declaration and initialization statement.
+
+Each element in an array is a variable.
+
+
+-------------------------------------
+            10.2
+-------------------------------------
+
+When we create (instantiate) an array object, we must specify the data type and the number of elements that we want. 
+The standard way to instantiate (create) an array object has these 4 parts: new <dataType>[<arraySize>]
+  	  	 
+1 - 	new 	- keyword telling Java that you want to create a new object in memory
+2 - 	<dataType> 	- the data type of the elements
+3 - 	[ ] 	- square brackets
+4 - 	<arraySize> 	- the number of elements you want
+  		
+
+Here is an example instantiating an array of 5 int variables.
+
+new int[5]
+
+And here is an example that declares and creates an array of 5 int variables named sample.
+
+int[] samples = new int[5];
+
+example : dataType[] arrayName = new dataType[numElements];
+
+
+-------------------------------------------------------------
+                        10.4.1
+-------------------------------------------------------------
+
+Basic example of an array for a year for dates : int[] daysList = new int[365];
+
+Now we can take that defined array and move through to print out the daysList array
+
+for (i = 0; i <= daysList.length() ; ++i) {
+   System.out.println(daysList[i]);
+}
+
+* Note this for loop will print out until 365 day prints out *
+
+----------------------------------------------------------------
+                        10.9
+----------------------------------------------------------------
+
+Basic example of a defined 2d Array :
+    // Define array with size [2][3]
+    int[] myArray = new int[2][3]
+
+    // Write to some elements
+    myArray[0][0] = 55;
+    myArray[1][1] = 77;
+    myArray[1][2] = 99;
+
+---------------------------------------------------------------------
+                10.22 Searching and algorithms
+---------------------------------------------------------------------
+                
+                    ** linearSearch algorithms **
+            -------------------------------------------
+import java.util.Scanner;
+public class LinearSearch {
+   public static int linearSearch(int [] numbers, int key) {
+      int i;
+      
+      for (i = 0; i < numbers.length; ++i) {
+         if (numbers[i] == key) {
+            return i;
+         }
+      }
+      
+      return -1; /* not found */
+   }
+   
+   public static void main(String [] args) {
+      Scanner scnr = new Scanner(System.in);
+      int [] numbers = {2, 4, 7, 10, 11, 32, 45, 87};
+      int i;
+      int key;
+      int keyIndex;
+      
+      System.out.print("NUMBERS: ");
+      for (i = 0; i < numbers.length; ++i) {
+         System.out.print(numbers[i] + " ");
+      }
+      System.out.println();
+      
+      System.out.print("Enter a value: ");
+      key = scnr.nextInt();
+      
+      keyIndex = linearSearch(numbers, key);
+      
+      if (keyIndex == -1) {
+         System.out.println(key + " was not found.");
+      } 
+      else {
+         System.out.println("Found " + key + " at index " + keyIndex + ".");
+      }
+   }
+}
+
+An algorithm's runtime is the time the algorithm takes to execute. If each comparison takes 1 µs 
+(1 microsecond), a linear search algorithm's runtime is up to 1 s to search a list with 1,000,000 elements, 
+10 s for 10,000,000 elements, and so on. Ex: Searching Amazon's online store, which has more than 200 million 
+items, could require more than 3 minutes.
+
+An algorithm typically uses a number of steps proportional to the size of the input. 
+For a list with 32 elements, linear search requires at most 32 comparisons: 1 comparison if the search key is 
+found at index 0, 2 if found at index 1, and so on, up to 32 comparisons if the search key is not found. 
+For a list with N elements, linear search thus requires at most N comparisons. The algorithm is said to 
+require "on the order" of N comparisons.
+
+
+--------------------------------------------------------------------------------
+                    0.23 Binary search
+--------------------------------------------------------------------------------
+
+                    ** Binary Search Algorithm **
+                ------------------------------------
+
+import java.util.Scanner;
+
+public class BinarySearch {
+   public static int binarySearch(int [] numbers, int key) {
+      int mid;
+      int low;
+      int high;
+      
+      low = 0;
+      high = numbers.length - 1;
+
+      while (high >= low) {
+         mid = (high + low) / 2;
+         if (numbers[mid] < key) {
+            low = mid + 1;
+         } 
+         else if (numbers[mid] > key) {
+            high = mid - 1;
+         } 
+         else {
+            return mid;
+         }
+      }
+
+      return -1; // not found
+   }
+
+   public static void main(String [] args) {
+      Scanner scnr = new Scanner(System.in);
+      int [] numbers = {2, 4, 7, 10, 11, 32, 45, 87};
+      int i;
+      int key;
+      int keyIndex;
+
+      System.out.print("NUMBERS: ");
+      for (i = 0; i < numbers.length; ++i) {
+         System.out.print(numbers[i] + " ");
+      }
+      System.out.println();
+
+      System.out.print("Enter a value: ");
+      key = scnr.nextInt();
+
+      keyIndex = binarySearch(numbers, key);
+
+      if (keyIndex == -1) {
+         System.out.println(key + " was not found.");
+      } 
+      else {
+         System.out.println("Found " + key + " at index " + keyIndex + ".");
+      }
+   }
+}
+                    -----------------------------------------------
+                            LinearSearch VS BinarySearch
+                    -----------------------------------------------
+
+Q: Given an unsorted list of 1024 elements, what is the runtime for linear search if the search key is less than all elements in the list?
+A: 1024
+E: Linear search assumes the elements are not sorted and will check all elements if the key is not found. 
+Thus, linear search's runtime is proportional to the number of list elements. 
+
+Q: Given a sorted list of 1024 elements, what is the runtime for binary search if the search key is greater than all elements in the list?
+A: 11
+E: Binary search's runtime is proportional to log (base two) of the number of list elements. [log2 1024] + 1 = 11
+
+
+------------------------------------------------------------------------------------------------------------
+                                10.25 Sorting
+-----------------------------------------------------------------------------------------------------------
+
+                            Selection sort algorithm
+                    ------------------------------------------
+
+public class SelectionSort {
+   public static void selectionSort(int [] numbers) {
+      int i;
+      int j;
+      int indexSmallest;
+      int temp;      // Temporary variable for swap
+
+      for (i = 0; i < numbers.length - 1; ++i) {
+
+         // Find index of smallest remaining element
+         indexSmallest = i;
+         for (j = i + 1; j < numbers.length; ++j) {
+
+            if (numbers[j] < numbers[indexSmallest]) {
+               indexSmallest = j;
+            }
+         }
+
+         // Swap numbers[i] and numbers[indexSmallest]
+         temp = numbers[i];
+         numbers[i] = numbers[indexSmallest];
+         numbers[indexSmallest] = temp;
+      }
+   }
+
+   public static void main(String [] args) {
+      int numbers [] = {10, 2, 78, 4, 45, 32, 7, 11};
+      int i;
+
+      System.out.print("UNSORTED: ");
+      for (i = 0; i < numbers.length; ++i) {
+         System.out.print(numbers[i] + " ");
+      }
+      System.out.println();
+
+      /* initial call to selection sort with index */
+      selectionSort(numbers);
+
+      System.out.print("SORTED: ");
+      for (i = 0; i < numbers.length; ++i) {
+         System.out.print(numbers[i] + " ");
+      }
+      System.out.println();
+   }
+}
+
+
+Selection sort may require a large number of comparisons. The selection sort algorithm runtime is O(N^2). 
+If a list has N elements, the outer loop executes N - 1 times. For each of those N - 1 outer loop executions, 
+the inner loop executes an average N/2 of times. So the total number of comparisons is proportional to (N -1) * N/2, or O(N^2). 
+Other sorting algorithms involve more complex algorithms but have faster execution times.

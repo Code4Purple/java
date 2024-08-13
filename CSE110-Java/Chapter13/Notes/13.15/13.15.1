@@ -1,0 +1,40 @@
+--------------------------
+- Unit testing (classes) -
+--------------------------
+
+-> Testbenches
+
+Like a chef who tastes food before serving, a class creator should test a class before allowing use. A testbench is a 
+program whose job is to thoroughly test another program (or portion) via a series of input/output checks known as test 
+cases. Unit testing means to create and run a testbench for a specific item (or "unit") like a method or a class. 
+
+The testbench below creates an object, then checks public methods for correctness. Some tests failed.
+
+Features of a good testbench include:
+
+   -  Automatic checks. Ex: Values are compared, as in testData.GetNum1() != 100. For conciseness, only fails are 
+      printed.
+   -  Independent test cases. Ex: The test case for GetAverage() assigns new values, vs. relying on earlier values.
+   -  100% code coverage: Every line of code is executed. A good testbench would have more test cases than below.
+   -  Includes not just typical values but also border cases: Unusual or extreme test case values like 0, negative 
+      numbers, or large numbers.
+
+
+-> Regression testing
+
+Regression testing means to retest an item like a class anytime that item is changed; if previously-passed test cases 
+fail, the item has "regressed".
+
+A testbench should be maintained along with the item, to always be usable for regression testing.
+
+Testbenches may be complex, with thousands of test cases. Various tools support testing, and companies employ test 
+engineers who only test other programmers' items. A large percent, like 50% or more, of commercial software development 
+time may go into testing.
+
+-> Erroneous unit tests
+
+An erroneous unit test may fail even if the code being tested is correct. A common error is for a programmer to assume 
+that a failing unit test means that the code being tested has a bug. Such an assumption may lead the programmer to spend 
+time trying to "fix" code that is already correct. Good practice is to inspect the code of a failing unit test before 
+making changes to the code being tested.
+

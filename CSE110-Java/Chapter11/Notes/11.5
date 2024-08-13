@@ -1,0 +1,67 @@
+Wrapper class conversions
+
+------------------------------------------------------------
+		Autoboxing and unboxing 
+-----------------------------------------------------------
+
+Java allows statements to combine primitive and wrapper class variables by automatically converting between primitive types 
+and wrapper classes. Autoboxing is the automatic conversion of primitive types to the corresponding wrapper classes. 
+Unboxing is the automatic conversion of wrapper class objects to the corresponding primitive types.
+
+
+-----------------------------------------------------------  GNU nano 7.2                                                   11.5                                                    Modified
+Wrapper class conversions
+
+------------------------------------------------------------
+                Autoboxing and unboxing
+-----------------------------------------------------------
+
+Java allows statements to combine primitive and wrapper class variables by automatically converting between primitive types
+and wrapper classes. Autoboxing is the automatic conversion of primitive types to the corresponding wrapper classes.
+Unboxing is the automatic conversion of wrapper class objects to the corresponding primitive types.
+
+
+------------------------------------------------------------
+		Converting to primitive types
+------------------------------------------------------------
+
+The Integer, Double, and Long wrapper classes provide methods for converting objects to primitive types.
+
+intValue() - Returns the value of the wrapper class object as a primitive int value, type casting if necessary.
+	     Example : num2.intValue() // Returns 6;
+
+doubleValue()  - Returns the value of the wrapper class object as a primitive double value, type casting if necessary.
+	         Example : html.doubleValue() // Returns 14.0
+
+longValue()    - Returns the value of the wrapper class object as a primitive long value, type casting if necessary.
+		 Example : num3.longValue() // Returns 560000000000
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+toString() 	Returns a String containing the decimal representation of the value contained by the wrapper class object.
+
+num1.toString() // Returns "10"
+num2.toString() // Returns "3.14"
+
+Integer.toString(someInteger) 	Returns a String containing the decimal representation of the value of someInteger. someInteger may be an Integer object, a int variable, or an integer literal. This static method is also available for the other wrapper classes (e.g.,  Double.toString(someDouble)).
+
+Integer.toString(num1)       // Returns "10"
+Integer.toString(regularInt) // Returns "20"
+Integer.toString(3)          // Returns "3"
+
+Integer.parseInt(someString) 	Parses someString and returns an int representing the value encoded by someString. This static method is also available for the other wrapper classes (e.g., Double.parseDouble(someString)), returning the corresponding primitive type.
+
+Integer.parseInt(str1)    // Returns int value 32
+Integer.parseInt("2001") // Returns int value 2001
+
+Integer.valueOf(someString) 	Parses someString and returns a new Integer object with the value encoded by someString. This static method is also available for the other wrapper classes (e.g., Double.valueOf(someString)), returning a new object of the corresponding type.
+
+Integer.valueOf(str1)    // Returns Integer object with value 32
+Integer.valueOf("2001") // Returns Integer object with value 2001
+
+Integer.toBinaryString(someInteger) 	Returns a String containing the binary representation of someInteger. someInteger may be an Integer object, a int variable, or an integer literal. This static method is also available for the Long classes (e.g.,  Long.toBinaryString(someLong)).
+
+Integer.toBinaryString(num1)       // Returns "1010"
+Integer.toBinaryString(regularInt) // Returns "10100"
+Integer.toBinaryString(7)          // Return "111"

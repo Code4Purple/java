@@ -1,0 +1,22 @@
+---------------
+- File output -
+---------------
+
+				 ** Opening and writing to a file ** 
+
+A FileOutputStream is a class that supports writing to a file. The FileOutputStream class inherits from 
+OutputStream.
+
+After declaring a variable of type FileOutputStream, a file is opened using the FileOutputStream's constructor, 
+which can take a file name string as an argument. The constructor throws an exception if the file cannot be opened 
+for writing.
+
+FileOutputStream only contains methods for writing bytes. To write strings and other common data types, a 
+PrintWriter is commonly used. A PrintWriter has methods such as print() and println() and can be constructed from 
+any OutputStream.
+
+		| Action | 				| Sample Code |
+Open the file helloWorld.txt for writing	FileOutputStream fileStream = new FileOutputStream("helloWorld.txt");
+Create a PrintWriter to write to the file 	PrintWriter outFS = new PrintWriter(fileStream);
+Write the string "Hello World!" to the file	outFS.println("Hello World!");
+Close the file after writing all desired data   outFS.close();

@@ -1,0 +1,80 @@
+-----------------------------------------------------
+- User Defined Classes & Operations (Introduction) -
+-----------------------------------------------------
+
+We have seen how to define classes of objects that know things - objects with state (i.e. attributes stored in 
+variables). Next we will introduce classes of objects that can also do things.
+
+Perhaps our bunnies should be able to hop, and eat, and sleep. Let's add a couple of operations (things that a bunny 
+can do) to our Bunny class, and update our class diagram with a third compartment for the operations.
+
+	------------------------
+	|	Bunny	       |
+	|	 age	       |
+	|	 name          |
+	------------------------
+	|	hop()          |
+	|	eat()	       |
+	|	sleep()	       |
+	------------------------
+
+We add operations to a class in java by defining methods inside the class. Let's add a hop method, and an eat method, and a sleep method to our Bunny class. Let's also say that we must pass some food (as a String argument) when we 
+call the eat method.
+
+			class Bunny {
+	   		    int age;
+			    String name;
+			    
+			    void hop() {
+			    } 
+
+   			    void eat(String food) {
+			    }
+
+			    void sleep() {
+			    }
+			} 
+
+Notice that these methods are not static. We will discuss the differences between static and non-static methods 
+(like those defined in the Bunny class above) in another section.
+
+Of course we will also need to provide the instructions to be executed when these methods are called. 
+
+class Bunny {
+   int age;
+   String name;
+
+   void hop() {
+       System.out.println(name + " hops around.");
+   }
+
+   void eat(String food) {
+       System.out.println(name + " eats the " + food + ".");
+   }
+
+   void sleep() {
+       System.out.println(name + " takes a nap.");
+   }
+}
+
+Now, when we instantiate a Bunny object, it will have the ability to hop, and eat, and sleep.
+		Bunny myBunny = new Bunny();
+
+-----------------
+- Dot Notation -
+-----------------
+
+We can call the methods of an object in Java by using dot notation. This simply means that we use the variable name 
+(myBunny for example) followed by a dot (a period), followed by the method name and an argument list. For example, we 
+can call the hop method of our Bunny object like this.
+
+		myBunny.hop();
+
+Since this hop method is just a method, we can call it just like any other method.
+
+**** The Main2.java is ready to run in the folder ****
+
+These methods follow all the rules of any other method, and we can do anything in them that we can do in any other 
+method; like take arguments, return values, use decisions and loops, and call other methods. For example, suppose that 
+our bunnies can only eat carrots and lettuce, but carrots are their favorite. We can rewrite the eat method as follows.
+

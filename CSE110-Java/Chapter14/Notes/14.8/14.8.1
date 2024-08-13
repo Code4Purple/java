@@ -1,0 +1,41 @@
+------------------
+- Using packages -
+------------------
+
+-> Built-in Java packages
+
+Java provides a variety of built-in classes, such as Scanner, ArrayList, File, and many others, that programmers can 
+use to write programs. Given the large number of built-in classes, Java organizes related classes into groupings called 
+packages.
+
+A package is a grouping of related types, classes, interfaces, and subpackage. The types, classes, and interfaces in a 
+package are called package members. The following table lists several built-in Java packages and sample package members.
+
+_____________________________________________________________________________________________________________________
+
+Package 		Sample package members 				Description
+______________________________________________________________________________________________________________________
+java.lang 	String, Integer, Double, Math 			Contains fundamental Java classes. Automatically imported by Java.
+java.util 	Collection, ArrayList, LinkedList, Scanner 	Contains the Java collections framework classes and miscellaneous utility classes.
+java.io 	File, InputStream, OutputStream 		Contains classes for system input and output.
+javax.swing 	JFrame, JTextField, JButton 			Contains classes for building graphical user interfaces.
+______________________________________________________________________________________________________________________
+
+-> Using package members in a program
+
+A programmer can use a package member using one of the following methods.
+
+  1.  Using a package member's fully qualified name: A class' fully qualified name is the concatenation of the package 
+      name with the class name using a period. Ex: java.util.Scanner is the fully qualified name for the Scanner class 
+      in the java.util package.
+
+  2.  Using an import statement to import the package member: An import statement imports a package member into a file 
+      to enable use of the package member directly, without having to use the package member's fully qualified name. 
+      ** Ex: import java.util.Scanner; imports the Scanner class into a file and allows a programmer to use Scanner 
+      instead of java.util.Scanner. **
+
+  3.  Using an import statement to import every member in a package: A programmer can import all members of a package 
+      by using the wildcard character * instead of a package member name. Ex: import java.util.*; imports all classes 
+      in the java.util package and allows a programmer use package members such as Scanner and ArrayList directly.
+
+

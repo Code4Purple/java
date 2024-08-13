@@ -1,0 +1,75 @@
+package Chapter10;
+
+public class Lab08 {
+    public static void main(String[] args) {
+        // Test Array
+        int[] myArray = {1, 22, 333, 400, 5005, 9};
+        System.out.println("Array: {1, 22, 333, 400, 5005, 9}");
+        // Call getFirst method
+        System.out.println("First element: " + getFirst(myArray));
+        // Call getLast method
+        System.out.println("Last element: " + getLast(myArray));
+        // Call contains method
+        System.out.println("Deos it Contain 400: " + contains(myArray, 400));
+        // GetAll but the first element
+        System.out.print("All but the first element: ");
+        int[] printArray = getAllButFirst(myArray);
+        for(int i = 0; i < printArray.length; i++){
+            System.out.print(printArray[i] + " ");
+        }
+        // Get all elements greater than 200
+        System.out.print("\nAll elements greater than 200: ");
+        int printArray2[] = getAllGreaterThan(myArray, 200);
+        for(int i = 0; i < printArray2.length; i++){
+            System.out.print(printArray2[i] + " "); 
+        } 
+     }
+     
+    public static int getFirst(int [] numbers) {
+        return numbers[0];
+    }
+
+    public static int getLast(int [] numbers) {
+        return numbers[numbers.length - 1];
+    }
+
+    public static boolean contains(int [] Array, int searchValue) {
+        for (int i = 0; i < Array.length; i++) {
+            if (Array[i] == searchValue) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static int[] getAllButFirst(int[] Array){
+        int newArray[] = new int[Array.length - 1];
+        for(int i = 0; i < newArray.length ; i++){
+            // Skips the first element
+            newArray[i] =  Array[i + 1];
+        }
+        return newArray;
+    }
+    
+    public static int[] getAllGreaterThan(int[] Array, int compareValue){
+        int newArray[] =  new int[Array.length]; // Create a new array
+        int count = 0;
+
+        for(int i = 0; i < Array.length; i++){
+            if(Array[i] > compareValue){
+                newArray[i] = Array[i];
+                count++;
+            }
+        }
+        //System.out.printf("\nCount of > than %d : %d",compareValue,count);
+        int correctArray[] = new int[count];
+        int j = 0;
+        for(int i = 0; i < newArray.length; i++){
+            if(newArray[i] != 0){
+                correctArray[j] = newArray[i];
+                j++;
+            }
+        }
+        return correctArray;
+    }
+}

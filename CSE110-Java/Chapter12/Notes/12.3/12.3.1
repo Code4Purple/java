@@ -1,0 +1,41 @@
+---------------
+- File input -
+---------------
+
+-------------------------------------------------
+	Opening and reading from a file
+-------------------------------------------------
+
+Sometimes a program should get input from a file rather than from a user typing on a keyboard. To read file input, a programmer 
+can create a new input stream that comes from a file, rather than the predefined input stream System.in that comes from the 
+standard input (keyboard). An input stream can then be used just like the familiar Scanner and System.in combination.
+
+The statement fileByteStream = new FileInputStream(str); creates a file input stream and opens the file denoted by a String 
+variable, str, for reading. FileInputStream's constructor also allows a programmer to pass the filename as a String literal. 
+Ex: fileByteStream = new FileInputStream("numFile.txt");
+
+------------------------------------------------
+	Reading until the end of the file
+------------------------------------------------
+
+A program can read varying amounts of data in a file by using a loop that reads until valid data is unavailable or the end of 
+the file has been reached. The hasNextInt() method returns true if an integer is available for reading. If the next item in 
+the file is not an integer or if the previous stream operation reached the end of the file, the method returns false. 
+The Scanner class offers multiple hasNext() methods for various data types such as int, double, String, etc.
+
+--------------------------------------------------------------------------------------------
+	Example: Counting instances of a specific word (CountingWords in Examples directory)
+--------------------------------------------------------------------------------------------
+
+The following program uses both the hasNext() and next() methods to determine how many times a user entered word 
+(type String) appears in a file. The number of words in the file is unknown, so the program extracts words until no more words 
+exist in the file.
+
+-------------------------------------------------------------------------
+	Example: Business reviews (ReviewSystem in Examples directory)
+-------------------------------------------------------------------------
+
+The following example reads a file with business reviews as the program starts and outputs data from the file at the end of the 
+program. The number of reviews is unknown to the program, so the program continues to read until the end of the file. 
+Each entry contains the username of the person who left the review and a 1 - 5 rating (1 being a low rating and 5 being a high rating). 
+Upon completion, the program outputs the data from the file along with the average business rating.
